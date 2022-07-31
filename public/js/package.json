@@ -1,0 +1,12 @@
+{
+  "name": "ellie_playground",
+  "version": "0.1.0",
+  "files": [
+    "ellie_playground_bg.wasm",
+    "ellie_playground.js",
+    "ellie_playground.d.ts"
+  ],
+  "module": "ellie_playground.js",
+  "types": "ellie_playground.d.ts",
+  "sideEffects": false
+}
