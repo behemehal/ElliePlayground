@@ -187,7 +187,10 @@ require(["vs/editor/editor.main"], function () {
     },
   };
 
-  //Add button to monaco editor
+  //Resize monaco editor
+  window.addEventListener("resize", function () {
+    editor.layout();
+  })
 
   monaco.languages.setMonarchTokensProvider("ellie", def);
 
