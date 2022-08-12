@@ -50,7 +50,8 @@ dependencies = [
 
 [[package]]
 name = "ellie_bytecode"
-version = "0.1.0"
+version = "0.1.1"
+source = "git+https://github.com/behemehal/Ellie-Language#14a345ded998a8dfb1d4c88480c7875e8bcac8be"
 dependencies = [
  "ellie_core",
  "ellie_parser",
@@ -60,7 +61,8 @@ dependencies = [
 
 [[package]]
 name = "ellie_core"
-version = "0.4.0"
+version = "0.5.0"
+source = "git+https://github.com/behemehal/Ellie-Language#14a345ded998a8dfb1d4c88480c7875e8bcac8be"
 dependencies = [
  "enum-as-inner",
  "lazy_static",
@@ -71,7 +73,8 @@ dependencies = [
 
 [[package]]
 name = "ellie_engine"
-version = "0.7.1"
+version = "0.8.2"
+source = "git+https://github.com/behemehal/Ellie-Language#14a345ded998a8dfb1d4c88480c7875e8bcac8be"
 dependencies = [
  "ellie_bytecode",
  "ellie_core",
@@ -86,6 +89,7 @@ dependencies = [
 [[package]]
 name = "ellie_parser"
 version = "0.5.2"
+source = "git+https://github.com/behemehal/Ellie-Language#14a345ded998a8dfb1d4c88480c7875e8bcac8be"
 dependencies = [
  "ellie_core",
  "ellie_standard_rules",
@@ -113,6 +117,7 @@ dependencies = [
 [[package]]
 name = "ellie_standard_rules"
 version = "0.1.0"
+source = "git+https://github.com/behemehal/Ellie-Language#14a345ded998a8dfb1d4c88480c7875e8bcac8be"
 dependencies = [
  "lazy_static",
  "regex",
@@ -120,7 +125,8 @@ dependencies = [
 
 [[package]]
 name = "ellie_tokenizer"
-version = "0.4.3"
+version = "0.4.5"
+source = "git+https://github.com/behemehal/Ellie-Language#14a345ded998a8dfb1d4c88480c7875e8bcac8be"
 dependencies = [
  "ellie_core",
  "enum-as-inner",
@@ -130,7 +136,8 @@ dependencies = [
 
 [[package]]
 name = "ellie_vm"
-version = "0.1.2"
+version = "0.2.2"
+source = "git+https://github.com/behemehal/Ellie-Language#14a345ded998a8dfb1d4c88480c7875e8bcac8be"
 dependencies = [
  "ellie_core",
  "libc",

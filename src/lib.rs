@@ -20,7 +20,7 @@ use ellie_engine::{
     terminal_utils::{print_errors, print_warnings, ColorDisplay, Colors, TextStyles},
     tokenizer,
     utils::{CompilerSettings, MainProgram, ProgramRepository},
-    vm::{read_program, RFile},
+    vm::read_program,
 };
 
 extern crate wee_alloc;
@@ -282,50 +282,59 @@ pub fn run(codec: &str) {
                                     }
                                 });
                             vm.load(&program).unwrap();
-                            match vm.run(program.main) {
-                                ellie_vm::utils::ThreadExit::Panic(e) => {
-                                    stdout_write_element(&&format!(
-                                        "\n{}ThreadPanic{} : {}{:?}{}",
-                                        color_terminal.color(Colors::Red),
-                                        color_terminal.color(Colors::Reset),
-                                        color_terminal.color(Colors::Cyan),
-                                        e.reason,
-                                        color_terminal.color(Colors::Reset),
-                                    ));
+                            vm.build_main_thread(program.main.0, program.main.1);
+                            loop {
+                                match vm.threads[0].step(&mut vm.heap) {
+                                    Ok(_) => (),
+                                    Err(e) => match e {
+                                        ellie_vm::utils::ThreadExit::Panic(e) => {
+                                            stdout_write_element(&&format!(
+                                                "\n{}ThreadPanic{} : {}{:?}{}",
+                                                color_terminal.color(Colors::Red),
+                                                color_terminal.color(Colors::Reset),
+                                                color_terminal.color(Colors::Cyan),
+                                                e.reason,
+                                                color_terminal.color(Colors::Reset),
+                                            ));
 
-                                    for frame in e.stack_trace {
-                                        stdout_write_element(&&format!(
-                                            "{}    at {}:{}",
-                                            color_terminal.color(Colors::Green),
-                                            frame.name,
-                                            frame.pos
-                                        ));
-                                    }
+                                            for frame in e.stack_trace {
+                                                stdout_write_element(&&format!(
+                                                    "{}    at {}:{}",
+                                                    color_terminal.color(Colors::Green),
+                                                    frame.name,
+                                                    frame.pos
+                                                ));
+                                            }
 
-                                    stdout_write_element(&
-                                        format!(
-                                            "\n{}NoDebugFile{} : {}Given error represents stack locations, but not supported for now{}",
-                                            color_terminal.color(Colors::Yellow),
-                                            color_terminal.color(Colors::Reset),
-                                            color_terminal.color(Colors::Cyan),
-                                            color_terminal.color(Colors::Reset),
-                                        ));
+                                            stdout_write_element(&
+                                            format!(
+                                                "\n{}NoDebugFile{} : {}Given error represents stack locations, but not supported for now{}",
+                                                color_terminal.color(Colors::Yellow),
+                                                color_terminal.color(Colors::Reset),
+                                                color_terminal.color(Colors::Cyan),
+                                                color_terminal.color(Colors::Reset),
+                                            ));
 
-                                    stdout_write_element(&format!(
-                                        "{}    at {}",
-                                        color_terminal.color(Colors::Red),
-                                        e.code_location,
-                                    ));
+                                            stdout_write_element(&format!(
+                                                "{}    at {}",
+                                                color_terminal.color(Colors::Red),
+                                                e.code_location,
+                                            ));
 
-                                    stdout_write_element(&format!(
-                                        "{}[VM]{}: Heap Dump\n\n{}",
-                                        color_terminal.color(Colors::Yellow),
-                                        color_terminal.color(Colors::Reset),
-                                        vm.heap_dump()
-                                    ));
+                                            stdout_write_element(&format!(
+                                                "{}[VM]{}: Heap Dump\n\n{}",
+                                                color_terminal.color(Colors::Yellow),
+                                                color_terminal.color(Colors::Reset),
+                                                vm.heap_dump()
+                                            ));
+                                        }
+                                        ellie_vm::utils::ThreadExit::ExitGracefully => {
+                                            break;
+                                        }
+                                    },
                                 }
-                                ellie_vm::utils::ThreadExit::ExitGracefully => (),
                             }
+
                             stdout_write_element(&format!(
                                 "\nEllie : {} - {}",
                                 ellie_engine::engine_constants::ELLIE_ENGINE_VERSION,

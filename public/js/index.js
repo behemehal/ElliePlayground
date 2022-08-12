@@ -190,7 +190,7 @@ require(["vs/editor/editor.main"], function () {
   //Resize monaco editor
   window.addEventListener("resize", function () {
     editor.layout();
-  })
+  });
 
   monaco.languages.setMonarchTokensProvider("ellie", def);
 
@@ -221,8 +221,16 @@ require(["vs/editor/editor.main"], function () {
   });
 
   var editor = monaco.editor.create(document.getElementById("container_left"), {
-    value:
-      "fn main() {\n\tv count = 0;\n\tv continue = true;\n\t//Loop until 'continue' is false\n\tloop continue {\n\t\t//If count reaches to 3\n\t\tif count > 3 {\n\t\t\t//Make continue false\n\t\t\tcontinue = false;\n\t\t} else {\n\t\t\t//Print count\n\t\t\tprintln(\"Count: \" + count);\n\t\t}\n\t\t//increment count by one\n\t\tcount += 1;\n\t}\n}",
+    value: `fn main() {
+  v count = 0;
+  v continue = true;
+  //Loop until 'count' is equal or less than 3
+  loop count <= 3 {
+    println("Count: " + count);
+    //increment count by one
+    count += 1;
+  }
+}`,
     language: "ellie",
     theme: "vs-dark",
   });
@@ -233,7 +241,20 @@ require(["vs/editor/editor.main"], function () {
 
   document.getElementById("fib_example").onclick = () => {
     editor.setValue(
-      "fn main() {\n\tv last = 0;\n\tv curr = 1;\n\tv loop_go = true;\n\tv loop_count = 0;\n\t\n\tloop loop_go {\n\t\tv fib = last + curr;\n\t\tlast = curr;\n\t\tcurr = fib;\n\t\tloop_count += 1;\n\t\tif loop_count == 10 {\n\t\t\tloop_go = false;\n\t\t\tprintln(\"Fib: \" + fib);\n\t\t}\n\t}\n}"
+      `fn main() {
+  v last = 0;
+  v curr = 1;
+  v loop_count = 0;
+  v fib = 0;
+  
+  loop loop_count <= 10 {
+    fib = last + curr;
+    last = curr;
+    curr = fib;
+    loop_count += 1;
+  }
+  println("Fib: " + fib);
+}`
     );
   };
 
@@ -245,10 +266,9 @@ require(["vs/editor/editor.main"], function () {
 
   document.getElementById("func_example").onclick = () => {
     editor.setValue(
-      "fn main() {\n\tfn collect(first: int, second: int) : int {\n\t\tv collection = first + second;\n\t\tret collection;\n\t}\n\tprintln(\"4 + 3 = \" + collect(4, 3));\n}"
+      'fn main() {\n\tfn collect(first: int, second: int) : int {\n\t\tv collection = first + second;\n\t\tret collection;\n\t}\n\tprintln("4 + 3 = " + collect(4, 3));\n}'
     );
   };
-
 
   //get text of editor
   function getText() {
