@@ -7,7 +7,7 @@ edition = "2021"
 crate-type = ["cdylib"]
 
 [dependencies]
-ellie_engine = { git = "https://github.com/behemehal/Ellie-Language", default-features = false, features = [ "compiler", "vm", "cli-utils"] }
+ellie_engine = { version = "0.9.0", git = "https://github.com/behemehal/Ellie-Language", default-features = false, features = [ "compiler", "vm", "renderer_utils", "fmt"] }
 wasm-bindgen = "0.2.63"
 console_error_panic_hook = { version = "0.1.6" }
 wee_alloc = { version = "0.4.5" }

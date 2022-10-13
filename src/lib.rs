@@ -15,9 +15,9 @@ use ellie_engine::{
         defs::{PlatformArchitecture, Version, VmNativeAnswer},
     },
     ellie_parser::parser,
+    ellie_renderer_utils::utils::{print_errors, print_warnings, ColorDisplay, Colors, TextStyles},
     ellie_tokenizer::tokenizer::ResolvedImport,
     ellie_vm::{self, utils::Reader},
-    terminal_utils::{print_errors, print_warnings, ColorDisplay, Colors, TextStyles},
     tokenizer,
     utils::{CompilerSettings, MainProgram, ProgramRepository},
     vm::read_program,
@@ -153,7 +153,7 @@ pub fn run(codec: &str) {
                 Colors::White => "<span class=\"termWhite\">",
                 Colors::Reset => "</span>",
             };
-            format!("{}{}", '\u{001b}', color_id)
+            format!("{}", color_id)
         }
 
         fn text_style(&self, _: TextStyles) -> String {
@@ -282,7 +282,7 @@ pub fn run(codec: &str) {
                                     }
                                 });
                             vm.load(&program).unwrap();
-                            vm.build_main_thread(program.main.0, program.main.1);
+                            vm.build_main_thread(program.main);
                             loop {
                                 match vm.threads[0].step(&mut vm.heap) {
                                     Ok(_) => (),
@@ -302,7 +302,7 @@ pub fn run(codec: &str) {
                                                     "{}    at {}:{}",
                                                     color_terminal.color(Colors::Green),
                                                     frame.name,
-                                                    frame.pos
+                                                    frame.frame_pos
                                                 ));
                                             }
 
