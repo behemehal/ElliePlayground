@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-ZLTTGZYE80"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-ZLTTGZYE80");
+    </script>
+    <meta charset="UTF-8" />
+    <!-- Facebook-->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://playground.ellie-lang.org" />
+    <meta property="og:title" content="Ellie Language Playground" />
+    <meta property="og:description" content="Run ellie on browser" />
+    <meta
+      property="og:image"
+      content="https://www.ellie-lang.org/img/Social.png"
+    />
+    <!-- Twitter-->
+    <meta property="twitter:url" content="https://playground.ellie-lang.org" />
+    <meta property="twitter:title" content="Ellie Language Playground" />
+    <meta property="twitter:description" content="Run ellie on browser" />
+    <meta
+      property="twitter:image"
+      content="https://www.ellie-lang.org/img/Social.png"
+    />
+    <meta name="title" content="Ellie Language Playground" />
+    <meta name="description" content="Run ellie on browser" />
+    <meta
+      name="keywords"
+      content="ellie,ellie programing language,program,programing language,behemehal"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="copyright" content="Behemehal" />
+    <meta name="language" content="English" />
+    <meta name="distribution" content="global" />
+    <meta name="revisit-after" content="5 days" />
+    <meta name="author" content="Behemehal" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="https://www.ellie-lang.org/img/EllieCharIcon@0,1x.png"
+      type="image/x-icon"
+    />
+    <link href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <title>ElliePlayground</title>
+  </head>
+  <body>
+    <header>
+      <nav
+        class="navbar navbar-expand-md fixed-top bg-theme navbar-theme dark-section p-0"
+      >
+        <div class="container-fluid mt-3">
+          <a class="navbar-brand" href="/">
+            <span>Ellie<span style="color: #884a6f">Playground</span></span>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <ul
+            class="nav col-12 col-md-auto mb-2 justify-content-end mb-md-0 collapse navbar-collapse"
+            id="navbarCollapse"
+          >
+            <li>
+              <a class="nav-link px-2" href="https://www.ellie-lang.org"
+                >Main Page</a
+              >
+            </li>
+            <li>
+              <a
+                class="nav-link px-2"
+                href="https://www.ellie-lang.org/blog.html"
+                >Blog</a
+              >
+            </li>
+            <li>
+              <a
+                class="nav-link px-2"
+                href="https://www.ellie-lang.org/releases.html"
+                >Releases</a
+              >
+            </li>
+            <li>
+              <a class="nav-link px-2" href="https://docs.ellie-lang.org"
+                >Docs</a
+              >
+            </li>
+            <li>
+              <a class="nav-link px-2" href="https://lia.ellie-lang.org">Lia</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main
+      class="dark-section section"
+      style="
+        width: 100%;
+        height: calc(100vh - 40px);
+        padding-top: 15px !important;
+        padding-bottom: 0 !important;
+        padding-right: 0 !important;
+        padding-left: 0px !important;
+      "
+    >
+      <div class="panel">
+        <div class="left_panel">
+          <div id="container_left">
+            <p class="loading">Loading Editor...</p>
+          </div>
+        </div>
+
+        <div class="seperator">
+          <span class="material-icons"> more_vert </span>
+        </div>
+
+        <div class="right_panel">
+          <div class="upper_panel">
+            <div>
+              <br />
+              <h3 style="text-align: center">Ellie Playground</h3>
+              <details open>
+                <summary>
+                  <span>About</span>
+                </summary>
+                <p>
+                  This is a playground for Ellie. It is a simple editor that
+                  allows you to write code in Ellie. You can run the code and
+                  see the output.
+                </p>
+              </details>
+              <details>
+                <summary><span>Language Items</span></summary>
+                <br />
+                <ul>
+                  <li>Variables</li>
+                  <code>
+                    v variable_type = 123;<br />
+                    c constant_variable = 123;
+                  </code>
+                </ul>
+                <ul>
+                  <li>Loop</li>
+                  <code>
+                    v continue = true;<br />
+                    loop continue {<br />
+                    println("Hello World");<br />
+                    }
+                  </code>
+                </ul>
+                <ul>
+                  <li>If Else</li>
+                  <code>
+                    if true {<br />
+                    println("Hello World");<br />
+                    } else if false {<br />
+                    println("Hello World");<br />
+                    } else {<br />
+                    println("Hello World");<br />
+                    }
+                  </code>
+                </ul>
+                <ul>
+                  <li>Functions</li>
+                  <code>
+                    pub fn function_name(parameter_name: parameter_type :
+                    return_type {<br />
+                    ret 123;<br />
+                    }
+                  </code>
+                </ul>
+              </details>
+              <details>
+                <summary><span>Types</span></summary>
+                <br />
+                <ul>
+                  <li>Boolean</li>
+                  <code> v positive: bool = true; </code>
+                </ul>
+                <ul>
+                  <li>Integer</li>
+                  <code> v age: int = 123; </code>
+                </ul>
+                <ul>
+                  <li>Float</li>
+                  <code> v pi: float = 3.14; </code>
+                </ul>
+                <ul>
+                  <li>Double</li>
+                  <code> v pi: double = 3.14; </code>
+                </ul>
+                <ul>
+                  <li>String</li>
+                  <code> v name: string = "Ellie"; </code>
+                </ul>
+                <ul>
+                  <li>Char</li>
+                  <code> v first_char: char = 'E'; </code>
+                </ul>
+              </details>
+              <details>
+                <summary><span>Examples</span></summary>
+                <br />
+                <ul>
+                  <li>
+                    <a id="hw_example" href="#hello_world"> Hello World </a>
+                  </li>
+                  <li>
+                    <a id="fib_example" href="#fibonacci"> Fibonacci </a>
+                  </li>
+                  <li>
+                    <a id="loop_example" href="#loop"> Loop </a>
+                  </li>
+                  <li>
+                    <a id="func_example" href="#function"> Function </a>
+                  </li>
+                </ul>
+              </details>
+              <br />
+              <div
+                class="run-panel d-flex"
+                style="margin-bottom: 15px; margin-top: 5px"
+              >
+                <button
+                  id="run_btn"
+                  type="button"
+                  style="margin-left: auto; margin-right: auto"
+                  class="btn btn-secondary d-flex"
+                >
+                  <span class="material-icons"> play_arrow </span>
+                  <span>Run</span>
+                </button>
+                <button
+                  id="clr_btn"
+                  type="button"
+                  style="margin-left: auto; margin-right: auto"
+                  class="btn btn-danger d-flex"
+                >
+                  <span class="material-icons"> delete </span>
+                  <span>Clear console</span>
+                </button>
+              </div>
+              <pre style="border: 1px solid grey" id="container_right_up"></pre>
+            </div>
+          </div>
+          <div class="bottom_panel">
+            <div id="container_right_bottom">
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="main.js"></script>
+    </main>
+  </body>
+</html>

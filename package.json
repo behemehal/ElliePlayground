@@ -1,0 +1,43 @@
+{
+  "name": "ellie_playground",
+  "version": "1.0.0",
+  "description": "A playground for ellie language",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve --mode development",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/behemehal/ElliePlayground.git"
+  },
+  "keywords": [
+    "ellie_language"
+  ],
+  "author": "Behemehal <info@behemehal.org>",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/behemehal/ElliePlayground/issues"
+  },
+  "homepage": "https://github.com/behemehal/ElliePlayground#readme",
+  "dependencies": {
+    "@popperjs/core": "^2.11.6",
+    "bootstrap": "^5.2.3",
+    "monaco-editor": "^0.34.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.3",
+    "html-loader": "^4.2.0",
+    "html-minimizer-webpack-plugin": "^4.3.0",
+    "postcss-loader": "^7.0.2",
+    "sass": "^1.57.1",
+    "sass-loader": "^13.2.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  }
+}
