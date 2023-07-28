@@ -1,0 +1,76 @@
+.panel {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.left_panel {
+  padding-top: 1px;
+  display: flex;
+  height: 100%;
+  background-color: #1e1e1e;
+}
+
+.left_panel #container_left {
+  width: 0;
+}
+
+.left_panel #container_left .loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.right_panel {
+  width: calc(100%);
+  height: 100%;
+  overflow: auto;
+}
+
+.upper_panel {
+  padding: 5px;
+  background-color: #1e1e1e;
+  width: 100%;
+  border: #f5eaef;
+}
+
+.upper_panel #container_right_up {
+  height: calc(100% - 15px);
+}
+
+.bottom_panel {
+  padding: 5px;
+  background: black;
+  width: 100%;
+  border: #f5eaef;
+  height: 100%;
+  overflow: auto;
+}
+
+/* DEMO-SPECIFIC STYLES */
+.bottom_panel p {
+  color: #fff;
+  font-family: Monospace;
+  white-space: pre;
+  font-size: 10pt;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid orange; /* The typwriter cursor */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15em; /* Adjust as needed */
+  border-right: .05em solid;
+  animation: caret 1s steps(1) infinite;
+}
+
+
+.seperator {
+  background: #462b45;
+  color: #f5eaef;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: w-resize;
+}
