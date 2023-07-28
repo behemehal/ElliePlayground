@@ -45,6 +45,7 @@
   width: 100%;
   border: #f5eaef;
   height: 100%;
+  overflow: auto;
 }
 
 /* DEMO-SPECIFIC STYLES */

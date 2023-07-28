@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlMinimizerPlugin = require("html-minimizer-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const WasmPackPlugin = require("@wasm-tool/wasm-pack-plugin");
 
 module.exports = {
   entry: "./src/js/main.js",
@@ -22,10 +23,23 @@ module.exports = {
         },
       ],
     }),
+    
+    new WasmPackPlugin({
+      crateDirectory: path.resolve(__dirname, "./wasm"),
+      outDir: path.resolve(__dirname, "./src/js/pkg"),
+      pluginLogLevel: 'error',
+      args: '--log-level error',
+    }),
   ],
   optimization: {
     minimize: true,
     minimizer: [new HtmlMinimizerPlugin()],
+  },
+  experiments: {
+    asyncWebAssembly: true,
+  },
+  stats: {
+    errorDetails: true,
   },
   module: {
     rules: [
