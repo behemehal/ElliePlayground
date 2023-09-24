@@ -2053,7 +2053,7 @@ module.exports = __webpack_require__.p + "d7843b8521e02d75a08a.html";
 /***/ ((module, exports, __webpack_require__) => {
 
 /* harmony import */ var WEBPACK_IMPORTED_MODULE_0 = __webpack_require__(2858);
-module.exports = __webpack_require__.v(exports, module.id, "5023ba18cc3d5fd751eb", {
+module.exports = __webpack_require__.v(exports, module.id, "59078223b7dbc87dcd8d", {
 	"./index_bg.js": {
 		"__wbg_new_abda76e883ba8a5f": WEBPACK_IMPORTED_MODULE_0/* .__wbg_new_abda76e883ba8a5f */ .a2,
 		"__wbg_stack_658279fe44541cf6": WEBPACK_IMPORTED_MODULE_0/* .__wbg_stack_658279fe44541cf6 */ .KM,
