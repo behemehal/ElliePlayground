@@ -599,11 +599,11 @@ pub fn run(stdout: JsValue, js_objects: js_sys::Uint8Array, debug_file: String) 
         match thread.step(&mut module_manager, &vm_program) {
             StepResult::Step => {
                 i += 1;
-                if i > 1_000_000 {
+                if i > 100_000_000 {
                     send_message_to_js(
                         "info",
                         format!(
-                            "{}[VM]{}: Execution canceled, over {}100_000{} cycles has passed.\n\n",
+                            "{}[VM]{}: Execution canceled, over {}100_000_000{} cycles has passed.\n\n",
                             color_terminal.color(Colors::Yellow),
                             color_terminal.color(Colors::Reset),
                             color_terminal.color(Colors::Red),
