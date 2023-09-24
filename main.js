@@ -46,7 +46,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, ":root{--bs-blue: #0d6efd;--bs-indigo: 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".panel {\n  width: 100%;\n  height: 100%;\n  display: flex;\n}\n\n.left_panel {\n  padding-top: 1px;\n  display: flex;\n  height: 100%;\n  background-color: #1e1e1e;\n}\n\n.left_panel #container_left {\n  width: 0;\n}\n\n.left_panel #container_left .loading {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 100%;\n}\n\n.right_panel {\n  width: calc(100%);\n  height: 100%;\n  overflow: auto;\n}\n\n.upper_panel {\n  padding: 5px;\n  background-color: #1e1e1e;\n  width: 100%;\n  border: #f5eaef;\n}\n\n.upper_panel #container_right_up {\n  height: calc(100% - 15px);\n}\n\n.bottom_panel {\n  padding: 5px;\n  background: black;\n  width: 100%;\n  border: #f5eaef;\n  height: 100%;\n  overflow: auto;\n}\n\n/* DEMO-SPECIFIC STYLES */\n.bottom_panel p {\n  color: #fff;\n  font-family: Monospace;\n  white-space: pre;\n  font-size: 10pt;\n  overflow: hidden; /* Ensures the content is not revealed until the animation */\n  border-right: 0.15em solid orange; /* The typwriter cursor */\n  margin: 0 auto; /* Gives that scrolling effect as the typing happens */\n  letter-spacing: 0.15em; /* Adjust as needed */\n  border-right: .05em solid;\n  animation: caret 1s steps(1) infinite;\n}\n\n\n.seperator {\n  background: #462b45;\n  color: #f5eaef;\n  text-align: center;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  -webkit-user-select: none;\n  user-select: none;\n  cursor: w-resize;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".panel {\r\n  width: 100%;\r\n  height: 100%;\r\n  display: flex;\r\n}\r\n\r\n.left_panel {\r\n  padding-top: 1px;\r\n  display: flex;\r\n  height: 100%;\r\n  background-color: #1e1e1e;\r\n}\r\n\r\n.left_panel #container_left {\r\n  width: 0;\r\n}\r\n\r\n.left_panel #container_left .loading {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  height: 100%;\r\n}\r\n\r\n.right_panel {\r\n  width: calc(100%);\r\n  height: 100%;\r\n  overflow: auto;\r\n}\r\n\r\n.upper_panel {\r\n  padding: 5px;\r\n  background-color: #1e1e1e;\r\n  width: 100%;\r\n  border: #f5eaef;\r\n}\r\n\r\n.upper_panel #container_right_up {\r\n  height: calc(100% - 15px);\r\n}\r\n\r\n.bottom_panel {\r\n  padding: 5px;\r\n  background: black;\r\n  width: 100%;\r\n  border: #f5eaef;\r\n  height: 100%;\r\n  overflow: auto;\r\n}\r\n\r\n/* DEMO-SPECIFIC STYLES */\r\n.bottom_panel p {\r\n  color: #fff;\r\n  font-family: Monospace;\r\n  white-space: pre;\r\n  font-size: 10pt;\r\n  overflow: hidden; /* Ensures the content is not revealed until the animation */\r\n  border-right: 0.15em solid orange; /* The typwriter cursor */\r\n  margin: 0 auto; /* Gives that scrolling effect as the typing happens */\r\n  letter-spacing: 0.15em; /* Adjust as needed */\r\n  border-right: .05em solid;\r\n  animation: caret 1s steps(1) infinite;\r\n}\r\n\r\n\r\n.seperator {\r\n  background: #462b45;\r\n  color: #f5eaef;\r\n  text-align: center;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  -webkit-user-select: none;\r\n  user-select: none;\r\n  cursor: w-resize;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -68,7 +68,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".panel {\n  width: 100%;\n  height: 10
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".termWhite {\n    color: #fff !important;\n}\n\n.termRed {\n    color: #ff0000 !important;\n}\n\n.termGreen {\n    color: #00ff00 !important;\n}\n\n.termYellow {\n    color: #ffff00 !important;\n}\n\n.termCyan {\n    color: #00ffff !important;\n}\n\n.termBlue {\n    color: #0000ff !important;\n}\n\n.termMagenta {\n    color: #ff00ff !important;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".termWhite {\r\n    color: #fff !important;\r\n    overflow: auto;\r\n}\r\n\r\n.termRed {\r\n    color: #ff0000 !important;\r\n    overflow: auto;\r\n}\r\n\r\n.termGreen {\r\n    color: #00ff00 !important;\r\n    overflow: auto;\r\n}\r\n\r\n.termYellow {\r\n    color: #ffff00 !important;\r\n    overflow: auto;\r\n}\r\n\r\n.termCyan {\r\n    color: #00ffff !important;\r\n    overflow: auto;\r\n}\r\n\r\n.termBlue {\r\n    color: #0000ff !important;\r\n    overflow: auto;\r\n}\r\n\r\n.termMagenta {\r\n    color: #ff00ff !important;\r\n    overflow: auto;\r\n}\r\n\r\n/* width */\r\n::-webkit-scrollbar {\r\n    width: 10px;\r\n  }\r\n  \r\n/* Track */\r\n::-webkit-scrollbar-track {\r\n  background: #f5eaef; \r\n}\r\n \r\n/* Handle */\r\n::-webkit-scrollbar-thumb {\r\n  background: #884a6f; \r\n}\r\n\r\n/* Handle on hover */\r\n::-webkit-scrollbar-thumb:hover {\r\n  background: #884a6f; \r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -95,7 +95,7 @@ var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".body {\n  font-family: \"Montserrat\";\n}\n\n.bg-theme {\n  background-color: #f5eaef;\n  font-family: \"Montserrat\";\n  height: 40px !important;\n}\n\n.navbar-theme .navbar-brand {\n  color: #884a6f;\n}\n\n.navbar-theme .navbar-brand:hover {\n  color: #5f334e;\n}\n\n.navbar-theme .navbar-brand:focus {\n  color: #633551;\n}\n\n.navbar-theme a.nav-link {\n  color: #884a6f;\n}\n\n.navbar-theme a.nav-link:hover {\n  color: #5f334e;\n}\n\n.navbar-theme a.nav-link:focus {\n  color: #633551;\n}\n\n.navbar-divider {\n  width: 1px;\n  height: 25px;\n  background: #884a6f;\n}\n\n.section {\n  padding: 3rem !important;\n  font-family: Montserrat;\n}\n\n.section .title {\n  padding-top: 10px;\n}\n\n.dark-section {\n  color: #f5eaef;\n  background: #462b45;\n}\n\n.theme-section {\n  background: #f5eaef;\n  font-family: Montserrat;\n  color: #884a6f;\n}\n\n.light-section {\n  background: #ffffff;\n  color: #884a6f;\n}\n\n.sponsors-section {\n  background: #8c1a21;\n  color: #ffffff;\n}\n\n.black-section {\n  background: black;\n  color: #884a6f;\n}\n\n.navbar-toggler-icon {\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n}\n\n.navbar-toggler:focus {\n  text-decoration: none;\n  outline: 0;\n  box-shadow: 0 0 0 0px !important;\n}\n\n.logo-sections svg {\n  fill: #884a6f;\n  color: #884a6f;\n  margin-left: 5px;\n  margin-right: 5px;\n}\n\n.imgbh {\n  margin-bottom: 6px;\n  margin-top: -6px;\n  display: block;\n}\n\n/*\n.navbar-toggler {\n    display: none;\n}\n\n#navbarCollapse {\n    display: none !important;\n}\n\n*/\n\n.icon-container .material-icons {\n  font-size: 34px;\n}\n\n.icon-container {\n  width: 75px;\n  height: 75px;\n  background: #f5eaef;\n  border-radius: 80px;\n  color: #884a6f;\n  width: 75px;\n  height: 75px;\n  background: #f5eaef;\n  border-radius: 80px;\n  color: #884a6f;\n  text-align: center;\n  padding-top: 20px;\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n  margin-bottom: 10px;\n}\n\n.icon-container .material-icons {\n  font-size: 34px;\n}\n\n.light-section a {\n  color: #884a6f !important;\n}\n\n.dark-section a {\n  color: #f5eaef !important;\n}\n\n.link-sections a {\n  margin-left: 5px;\n  margin-right: 5px;\n  text-decoration: none;\n  text-align: center;\n}\n\n.inner_scope {\n  padding-left: 4em;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".body {\r\n  font-family: \"Montserrat\";\r\n}\r\n\r\n.bg-theme {\r\n  background-color: #f5eaef;\r\n  font-family: \"Montserrat\";\r\n  height: 40px !important;\r\n}\r\n\r\n.navbar-theme .navbar-brand {\r\n  color: #884a6f;\r\n}\r\n\r\n.navbar-theme .navbar-brand:hover {\r\n  color: #5f334e;\r\n}\r\n\r\n.navbar-theme .navbar-brand:focus {\r\n  color: #633551;\r\n}\r\n\r\n.navbar-theme a.nav-link {\r\n  color: #884a6f;\r\n}\r\n\r\n.navbar-theme a.nav-link:hover {\r\n  color: #5f334e;\r\n}\r\n\r\n.navbar-theme a.nav-link:focus {\r\n  color: #633551;\r\n}\r\n\r\n.navbar-divider {\r\n  width: 1px;\r\n  height: 25px;\r\n  background: #884a6f;\r\n}\r\n\r\n.section {\r\n  padding: 3rem !important;\r\n  font-family: Montserrat;\r\n}\r\n\r\n.section .title {\r\n  padding-top: 10px;\r\n}\r\n\r\n.dark-section {\r\n  color: #f5eaef;\r\n  background: #462b45;\r\n}\r\n\r\n.theme-section {\r\n  background: #f5eaef;\r\n  font-family: Montserrat;\r\n  color: #884a6f;\r\n}\r\n\r\n.light-section {\r\n  background: #ffffff;\r\n  color: #884a6f;\r\n}\r\n\r\n.sponsors-section {\r\n  background: #8c1a21;\r\n  color: #ffffff;\r\n}\r\n\r\n.black-section {\r\n  background: black;\r\n  color: #884a6f;\r\n}\r\n\r\n.navbar-toggler-icon {\r\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n}\r\n\r\n.navbar-toggler:focus {\r\n  text-decoration: none;\r\n  outline: 0;\r\n  box-shadow: 0 0 0 0px !important;\r\n}\r\n\r\n.logo-sections svg {\r\n  fill: #884a6f;\r\n  color: #884a6f;\r\n  margin-left: 5px;\r\n  margin-right: 5px;\r\n}\r\n\r\n.imgbh {\r\n  margin-bottom: 6px;\r\n  margin-top: -6px;\r\n  display: block;\r\n}\r\n\r\n/*\r\n.navbar-toggler {\r\n    display: none;\r\n}\r\n\r\n#navbarCollapse {\r\n    display: none !important;\r\n}\r\n\r\n*/\r\n\r\n.icon-container .material-icons {\r\n  font-size: 34px;\r\n}\r\n\r\n.icon-container {\r\n  width: 75px;\r\n  height: 75px;\r\n  background: #f5eaef;\r\n  border-radius: 80px;\r\n  color: #884a6f;\r\n  width: 75px;\r\n  height: 75px;\r\n  background: #f5eaef;\r\n  border-radius: 80px;\r\n  color: #884a6f;\r\n  text-align: center;\r\n  padding-top: 20px;\r\n  display: block;\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n  margin-bottom: 10px;\r\n}\r\n\r\n.icon-container .material-icons {\r\n  font-size: 34px;\r\n}\r\n\r\n.light-section a {\r\n  color: #884a6f !important;\r\n}\r\n\r\n.dark-section a {\r\n  color: #f5eaef !important;\r\n}\r\n\r\n.link-sections a {\r\n  margin-left: 5px;\r\n  margin-right: 5px;\r\n  text-decoration: none;\r\n  text-align: center;\r\n}\r\n\r\n.inner_scope {\r\n  padding-left: 4em;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -716,14 +716,14 @@ module.exports = styleTagTransform;
 /***/ ((module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
-/* harmony import */ var _css_theme_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8040);
-/* harmony import */ var _css_panel_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3325);
-/* harmony import */ var _css_terminal_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2865);
-/* harmony import */ var _scss_styles_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4196);
-/* harmony import */ var _index_html__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3149);
+/* harmony import */ var _css_panel_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3325);
+/* harmony import */ var _css_terminal_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2865);
+/* harmony import */ var _css_theme_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8040);
+/* harmony import */ var _index_html__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3149);
+/* harmony import */ var _scss_styles_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4196);
 /* harmony import */ var _monaco_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9565);
-/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(3658);
 /* harmony import */ var _pkg_index_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(4025);
+/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(3658);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_pkg_index_js__WEBPACK_IMPORTED_MODULE_6__]);
 _pkg_index_js__WEBPACK_IMPORTED_MODULE_6__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
@@ -741,42 +741,21 @@ document.querySelector(".bottom_panel").innerHTML +=
 async function main() {
   let setEditor = await (0,_monaco_js__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z)(onCodeRun, onByteCodeGenerate, onCodeFormat);
   const worker = new Worker(new URL(/* worker import */ __webpack_require__.p + __webpack_require__.u(9459), __webpack_require__.b));
-  worker.onmessage = _utils_js__WEBPACK_IMPORTED_MODULE_7__/* .messageHandler */ .v;
-  (0,_utils_js__WEBPACK_IMPORTED_MODULE_7__/* .messageHandler */ .v)({
-    data: {
-      type: "info",
-      message: (0,_pkg_index_js__WEBPACK_IMPORTED_MODULE_6__/* .getInfo */ .C5)(),
-    },
-  });
-
-  document.querySelector(".bottom_panel").innerHTML += `<br>`;
-
-  (0,_utils_js__WEBPACK_IMPORTED_MODULE_7__/* .messageHandler */ .v)({
-    data: {
-      type: "info",
-      message: "Ready",
-    },
-  });
-
-  document.querySelector(".bottom_panel").innerHTML += `<br>`;
+  worker.onmessage = (data) => {
+    if (data.data.type === "formatedCode") {
+      setEditor(data.data.message);
+    } else if (data.data.type === "byteCodeGenerated") {
+      setEditor(data.data.message);
+    } else {
+      (0,_utils_js__WEBPACK_IMPORTED_MODULE_7__/* .messageHandler */ .v)(data);
+    }
+  };
 
   function onCodeRun(code) {
     try {
-      const time = new Date().getTime();
-      const output = (0,_pkg_index_js__WEBPACK_IMPORTED_MODULE_6__/* .compile */ .MY)(_utils_js__WEBPACK_IMPORTED_MODULE_7__/* .stdout */ .H, code);
       worker.postMessage({
-        cmd: "run",
-        code: {
-          program: output.program,
-          debug_file: output.debug_file,
-        },
-      });
-
-      (0,_utils_js__WEBPACK_IMPORTED_MODULE_7__/* .messageHandler */ .v)({
-        data: {
-          type: "info",
-          message: `Compiled in ${new Date().getTime() - time}ms`,
-        },
+        cmd: "runCompile",
+        code,
       });
     } catch (err) {
       (0,_utils_js__WEBPACK_IMPORTED_MODULE_7__/* .messageHandler */ .v)({
@@ -790,21 +769,10 @@ async function main() {
 
   function onByteCodeGenerate(code) {
     try {
-      const time = new Date().getTime();
-      const output = (0,_pkg_index_js__WEBPACK_IMPORTED_MODULE_6__/* .byteCodeGenerate */ .OH)(_utils_js__WEBPACK_IMPORTED_MODULE_7__/* .stdout */ .H, code);
-      (0,_utils_js__WEBPACK_IMPORTED_MODULE_7__/* .messageHandler */ .v)({
-        data: {
-          type: "info",
-          message: `Compiled in ${new Date().getTime() - time}ms`,
-        },
+      worker.postMessage({
+        cmd: "byteCodeGenerate",
+        code,
       });
-      (0,_utils_js__WEBPACK_IMPORTED_MODULE_7__/* .messageHandler */ .v)({
-        data: {
-          type: "info",
-          message: `ByteCode Rendered`,
-        },
-      });
-      setEditor(code + "\n\n/*\n\t" + output.split("\n").join("\n\t") + "\n*/");
     } catch (err) {
       (0,_utils_js__WEBPACK_IMPORTED_MODULE_7__/* .messageHandler */ .v)({
         data: {
@@ -817,21 +785,11 @@ async function main() {
 
   function onCodeFormat(code) {
     try {
-      const time = new Date().getTime();
-      const output = (0,_pkg_index_js__WEBPACK_IMPORTED_MODULE_6__/* .formatCode */ .XQ)(_utils_js__WEBPACK_IMPORTED_MODULE_7__/* .stdout */ .H, code);
-      (0,_utils_js__WEBPACK_IMPORTED_MODULE_7__/* .messageHandler */ .v)({
-        data: {
-          type: "info",
-          message: `Compiled in ${new Date().getTime() - time}ms`,
-        },
+      worker.postMessage({
+        cmd: "formatCode",
+        code,
       });
-      (0,_utils_js__WEBPACK_IMPORTED_MODULE_7__/* .messageHandler */ .v)({
-        data: {
-          type: "info",
-          message: `Code formated`,
-        },
-      });
-      setEditor(output);
+      // setEditor(output);
     } catch (err) {
       (0,_utils_js__WEBPACK_IMPORTED_MODULE_7__/* .messageHandler */ .v)({
         data: {
@@ -883,6 +841,17 @@ const loopExample = `fn main() {
     }
 }`;
 
+const loopCharCombiner = `fn main() {
+    v chars = ['e', 'l', 'l', 'i', 'e'];
+    v count = 0;
+    v newStr = "";
+    loop chars.len() > count {
+        newStr += chars[count] as string;
+        count += 1;
+    }
+    println(newStr);
+}`;
+
 const functionExample = `fn main() {
 
     fn collect(a: int, b: int) : int {
@@ -920,20 +889,64 @@ const fibonacciWithLoop = `fn main() {
     println("fib(10) = " + fib);
 }`;
 
+const classExample = `class Human {
+    co(name, age);
+  
+    v name: string;
+    v age: int;
+  
+    fn introduce() : string {
+      ret "Hello my name is " + self.name + ", I born at " + (2023 - self.age);
+    }
+  } 
+  
+  fn main() {
+    v human = new Human("Ahmetcan", 22);
+  
+    println(human.introduce());
+}`;
+
+const speed = `fn main() {
+    v now = timestamp();
+    v x = 1000000;
+    println("START");
+  
+    loop x > 0 {
+      x -= 1;
+    }
+    v took = timestamp() - now;
+    println("Operation took " + took +  " seconds.");
+}`;
+
 /* harmony default export */ const codeExamples = ([
-  { name: "Hello World", title: "helloWorld", code: helloWorld },
-  { name: "Loop Example", title: "loopExample", code: loopExample },
-  { name: "Function Example", title: "functionExample", code: functionExample },
-  {
-    name: "Fibonacci Recursion",
-    title: "fibonacciWithRecursion",
-    code: fibonacciWithRecursion,
-  },
-  {
-    name: "Fibonacci Loop",
-    title: "fibonacciWithLoop",
-    code: fibonacciWithLoop,
-  },
+    { name: "Hello World", title: "helloWorld", code: helloWorld },
+    { name: "Loop Example", title: "loopExample", code: loopExample },
+    { name: "Function Example", title: "functionExample", code: functionExample },
+    {
+        name: "Fibonacci Recursion",
+        title: "fibonacciWithRecursion",
+        code: fibonacciWithRecursion,
+    },
+    {
+        name: "Fibonacci Loop",
+        title: "fibonacciWithLoop",
+        code: fibonacciWithLoop,
+    },
+    {
+        name: "Loop over Char",
+        title: "loopCharCombiner",
+        code: loopCharCombiner,
+    },
+    {
+        name: "Class Example",
+        title: "classExample",
+        code: classExample
+    },
+    {
+        name: "Speed Test",
+        title: "speedTest",
+        code: speed
+    }
 ]);
 
 ;// CONCATENATED MODULE: ./src/js/def.js
@@ -1190,7 +1203,10 @@ async function editor(
   document.querySelector("#container_left").addEventListener(
     "transitionend",
     () => {
-      document.querySelector("#container_left").style["transition"] = null;
+      setTimeout(() => {
+        document.querySelector("#container_left").style["transition"] = null;
+        _editor.layout();
+      }, 500);
       _editor.layout();
     },
   );
@@ -1198,7 +1214,10 @@ async function editor(
   document.querySelector("#container_left").addEventListener(
     "webkitTransitionEnd",
     () => {
-      document.querySelector("#container_left").style["transition"] = null;
+      setTimeout(() => {
+        document.querySelector("#container_left").style["transition"] = null;
+        _editor.layout();
+      }, 500);
       _editor.layout();
     },
   );
@@ -1261,8 +1280,8 @@ async function editor(
   };
 
   document.getElementById("clr_btn").onclick = () => {
-    document.querySelector(".bottom_panel").innerHTML +=
-        `<p class="termGreen">Console cleaned</p>`;
+    document.querySelector(".bottom_panel").innerHTML =
+      `<p class="termGreen">Console cleaned</p>`;
   };
 
   return (value) => {
@@ -1274,22 +1293,16 @@ async function editor(
 /***/ }),
 
 /***/ 4025:
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "C5": () => (/* reexport safe */ _index_bg_js__WEBPACK_IMPORTED_MODULE_1__.C5),
-/* harmony export */   "MY": () => (/* reexport safe */ _index_bg_js__WEBPACK_IMPORTED_MODULE_1__.MY),
-/* harmony export */   "OH": () => (/* reexport safe */ _index_bg_js__WEBPACK_IMPORTED_MODULE_1__.OH),
-/* harmony export */   "XQ": () => (/* reexport safe */ _index_bg_js__WEBPACK_IMPORTED_MODULE_1__.XQ)
-/* harmony export */ });
-/* harmony import */ var _index_bg_wasm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4488);
-/* harmony import */ var _index_bg_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2858);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_index_bg_wasm__WEBPACK_IMPORTED_MODULE_0__]);
-_index_bg_wasm__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+/* harmony import */ var _index_bg_wasm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4488);
+/* harmony import */ var _index_bg_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2858);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_index_bg_wasm__WEBPACK_IMPORTED_MODULE_1__]);
+_index_bg_wasm__WEBPACK_IMPORTED_MODULE_1__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
 
-(0,_index_bg_js__WEBPACK_IMPORTED_MODULE_1__/* .__wbg_set_wasm */ .oT)(_index_bg_wasm__WEBPACK_IMPORTED_MODULE_0__);
+(0,_index_bg_js__WEBPACK_IMPORTED_MODULE_0__/* .__wbg_set_wasm */ .oT)(_index_bg_wasm__WEBPACK_IMPORTED_MODULE_1__);
 
 
 __webpack_async_result__();
@@ -1302,49 +1315,49 @@ __webpack_async_result__();
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "$3": () => (/* binding */ __wbg_newnoargs_581967eacc0e2604),
-/* harmony export */   "C5": () => (/* binding */ getInfo),
+/* harmony export */   "B3": () => (/* binding */ __wbg_now_9c5990bda04c7e53),
+/* harmony export */   "Bj": () => (/* binding */ __wbg_node_1cd7a5d853dbea79),
 /* harmony export */   "CN": () => (/* binding */ __wbg_newwithlength_e5d69174d6984cd7),
 /* harmony export */   "E$": () => (/* binding */ __wbg_globalThis_1d39714405582d3c),
+/* harmony export */   "F": () => (/* binding */ __wbg_randomFillSync_dc1e9a60c158336d),
+/* harmony export */   "Fu": () => (/* binding */ __wbindgen_closure_wrapper4777),
 /* harmony export */   "G6": () => (/* binding */ __wbindgen_cb_drop),
 /* harmony export */   "H6": () => (/* binding */ __wbg_set_5cf90238115182c3),
-/* harmony export */   "JC": () => (/* binding */ __wbg_crypto_2036bed7c44c25e7),
+/* harmony export */   "KM": () => (/* binding */ __wbg_stack_658279fe44541cf6),
 /* harmony export */   "Ky": () => (/* binding */ __wbg_length_72e2208bbc0efc61),
-/* harmony export */   "MY": () => (/* binding */ compile),
-/* harmony export */   "Mk": () => (/* binding */ __wbg_static_accessor_NODE_MODULE_cf6401cc1091279e),
 /* harmony export */   "Nl": () => (/* binding */ __wbg_call_01734de55d61e11d),
-/* harmony export */   "OH": () => (/* binding */ byteCodeGenerate),
-/* harmony export */   "OP": () => (/* binding */ __wbg_node_7ff1ce49caf23815),
 /* harmony export */   "Od": () => (/* binding */ __wbg_call_cb65541d95d71282),
 /* harmony export */   "Or": () => (/* binding */ __wbindgen_throw),
 /* harmony export */   "PY": () => (/* binding */ __wbg_subarray_13db269f57aa838d),
 /* harmony export */   "Qz": () => (/* binding */ __wbg_window_5f4faef6c12b79ec),
-/* harmony export */   "T_": () => (/* binding */ __wbg_msCrypto_a21fc88caf1ecdc8),
+/* harmony export */   "Sc": () => (/* binding */ __wbg_crypto_c48a774b022d20ac),
+/* harmony export */   "TE": () => (/* binding */ __wbg_getRandomValues_37fa2ca9e4e07fab),
+/* harmony export */   "Vb": () => (/* binding */ __wbg_process_298734cf255a885d),
+/* harmony export */   "Wc": () => (/* binding */ __wbg_require_8f08ceecec0f4fee),
 /* harmony export */   "Wl": () => (/* binding */ __wbindgen_is_object),
 /* harmony export */   "XP": () => (/* binding */ __wbindgen_is_undefined),
-/* harmony export */   "XQ": () => (/* binding */ formatCode),
 /* harmony export */   "Zf": () => (/* binding */ __wbg_buffer_085ec1f694018c4f),
+/* harmony export */   "a2": () => (/* binding */ __wbg_new_abda76e883ba8a5f),
 /* harmony export */   "c7": () => (/* binding */ __wbg_global_651f05c6a0944d1c),
-/* harmony export */   "dp": () => (/* binding */ __wbg_getRandomValues_b99eec4244a475bb),
+/* harmony export */   "cU": () => (/* binding */ __wbg_versions_e2e78e134e3e5d01),
 /* harmony export */   "eY": () => (/* binding */ __wbindgen_is_string),
-/* harmony export */   "ej": () => (/* binding */ __wbg_process_0cc2ada8524d6f83),
 /* harmony export */   "ey": () => (/* binding */ __wbg_self_1ff1d729e9aae938),
 /* harmony export */   "fY": () => (/* binding */ __wbindgen_debug_string),
 /* harmony export */   "fr": () => (/* binding */ __wbg_newwithbyteoffsetandlength_6da8e527659b86aa),
 /* harmony export */   "gE": () => (/* binding */ __wbg_log_1d3ae0273d8f4f8a),
+/* harmony export */   "gj": () => (/* binding */ __wbg_msCrypto_bcb970640f50a1e8),
 /* harmony export */   "h4": () => (/* binding */ __wbindgen_string_new),
+/* harmony export */   "iX": () => (/* binding */ __wbg_error_f851667af71bcfc6),
 /* harmony export */   "m_": () => (/* binding */ __wbindgen_object_clone_ref),
+/* harmony export */   "o$": () => (/* binding */ __wbindgen_is_function),
 /* harmony export */   "oH": () => (/* binding */ __wbindgen_memory),
 /* harmony export */   "oT": () => (/* binding */ __wbg_set_wasm),
 /* harmony export */   "ot": () => (/* binding */ __wbg_resolve_53698b95aaf7fcf8),
 /* harmony export */   "rU": () => (/* binding */ __wbg_new_8125e318e6245eed),
-/* harmony export */   "sh": () => (/* binding */ __wbindgen_closure_wrapper706),
 /* harmony export */   "ug": () => (/* binding */ __wbindgen_object_drop_ref),
-/* harmony export */   "vv": () => (/* binding */ __wbg_then_f7e06ee3c11698eb),
-/* harmony export */   "wm": () => (/* binding */ __wbg_require_a746e79b322b9336),
-/* harmony export */   "xn": () => (/* binding */ __wbg_versions_c11acceab27a6c87),
-/* harmony export */   "yP": () => (/* binding */ __wbg_randomFillSync_065afffde01daa66)
+/* harmony export */   "vv": () => (/* binding */ __wbg_then_f7e06ee3c11698eb)
 /* harmony export */ });
-/* unused harmony exports run, CompileResult */
+/* unused harmony exports init, byteCodeGenerate, formatCode, compile, run, getInfo, CompileResult */
 /* module decorator */ module = __webpack_require__.hmd(module);
 let wasm;
 function __wbg_set_wasm(val) {
@@ -1556,8 +1569,14 @@ function makeMutClosure(arg0, arg1, dtor, f) {
 
     return real;
 }
-function __wbg_adapter_22(arg0, arg1, arg2) {
-    wasm._dyn_core__ops__function__FnMut__A____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__h37161a57ff52fe72(arg0, arg1, addHeapObject(arg2));
+function __wbg_adapter_24(arg0, arg1, arg2) {
+    wasm.wasm_bindgen__convert__closures__invoke1_mut__h2d2de89bee606cf9(arg0, arg1, addHeapObject(arg2));
+}
+
+/**
+*/
+function init() {
+    wasm.init();
 }
 
 /**
@@ -1658,11 +1677,6 @@ function handleError(f, args) {
         wasm.__wbindgen_exn_store(addHeapObject(e));
     }
 }
-
-function getArrayU8FromWasm0(ptr, len) {
-    ptr = ptr >>> 0;
-    return getUint8Memory0().subarray(ptr / 1, ptr / 1 + len);
-}
 /**
 */
 class CompileResult {
@@ -1738,6 +1752,31 @@ class CompileResult {
     }
 }
 
+function __wbg_new_abda76e883ba8a5f() {
+    const ret = new Error();
+    return addHeapObject(ret);
+};
+
+function __wbg_stack_658279fe44541cf6(arg0, arg1) {
+    const ret = getObject(arg1).stack;
+    const ptr1 = passStringToWasm0(ret, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+    const len1 = WASM_VECTOR_LEN;
+    getInt32Memory0()[arg0 / 4 + 1] = len1;
+    getInt32Memory0()[arg0 / 4 + 0] = ptr1;
+};
+
+function __wbg_error_f851667af71bcfc6(arg0, arg1) {
+    let deferred0_0;
+    let deferred0_1;
+    try {
+        deferred0_0 = arg0;
+        deferred0_1 = arg1;
+        console.error(getStringFromWasm0(arg0, arg1));
+    } finally {
+        wasm.__wbindgen_free(deferred0_0, deferred0_1, 1);
+    }
+};
+
 function __wbindgen_object_drop_ref(arg0) {
     takeObject(arg0);
 };
@@ -1747,42 +1786,61 @@ function __wbindgen_object_clone_ref(arg0) {
     return addHeapObject(ret);
 };
 
+function __wbg_log_1d3ae0273d8f4f8a(arg0) {
+    console.log(getObject(arg0));
+};
+
 function __wbindgen_string_new(arg0, arg1) {
     const ret = getStringFromWasm0(arg0, arg1);
     return addHeapObject(ret);
 };
 
-function __wbg_log_1d3ae0273d8f4f8a(arg0) {
-    console.log(getObject(arg0));
+function __wbindgen_memory() {
+    const ret = wasm.memory;
+    return addHeapObject(ret);
 };
 
-function __wbindgen_cb_drop(arg0) {
-    const obj = takeObject(arg0).original;
-    if (obj.cnt-- == 1) {
-        obj.a = 0;
-        return true;
-    }
-    const ret = false;
+function __wbg_buffer_085ec1f694018c4f(arg0) {
+    const ret = getObject(arg0).buffer;
+    return addHeapObject(ret);
+};
+
+function __wbg_newwithbyteoffsetandlength_6da8e527659b86aa(arg0, arg1, arg2) {
+    const ret = new Uint8Array(getObject(arg0), arg1 >>> 0, arg2 >>> 0);
+    return addHeapObject(ret);
+};
+
+function __wbg_new_8125e318e6245eed(arg0) {
+    const ret = new Uint8Array(getObject(arg0));
+    return addHeapObject(ret);
+};
+
+function __wbg_length_72e2208bbc0efc61(arg0) {
+    const ret = getObject(arg0).length;
     return ret;
 };
 
-function __wbg_process_0cc2ada8524d6f83(arg0) {
+function __wbg_now_9c5990bda04c7e53() {
+    const ret = Date.now();
+    return ret;
+};
+
+function __wbg_crypto_c48a774b022d20ac(arg0) {
+    const ret = getObject(arg0).crypto;
+    return addHeapObject(ret);
+};
+
+function __wbg_process_298734cf255a885d(arg0) {
     const ret = getObject(arg0).process;
     return addHeapObject(ret);
 };
 
-function __wbindgen_is_object(arg0) {
-    const val = getObject(arg0);
-    const ret = typeof(val) === 'object' && val !== null;
-    return ret;
-};
-
-function __wbg_versions_c11acceab27a6c87(arg0) {
+function __wbg_versions_e2e78e134e3e5d01(arg0) {
     const ret = getObject(arg0).versions;
     return addHeapObject(ret);
 };
 
-function __wbg_node_7ff1ce49caf23815(arg0) {
+function __wbg_node_1cd7a5d853dbea79(arg0) {
     const ret = getObject(arg0).node;
     return addHeapObject(ret);
 };
@@ -1792,43 +1850,31 @@ function __wbindgen_is_string(arg0) {
     return ret;
 };
 
-function __wbg_crypto_2036bed7c44c25e7(arg0) {
-    const ret = getObject(arg0).crypto;
+function __wbg_require_8f08ceecec0f4fee() { return handleError(function () {
+    const ret = module.require;
     return addHeapObject(ret);
+}, arguments) };
+
+function __wbindgen_is_function(arg0) {
+    const ret = typeof(getObject(arg0)) === 'function';
+    return ret;
 };
 
-function __wbg_msCrypto_a21fc88caf1ecdc8(arg0) {
+function __wbg_msCrypto_bcb970640f50a1e8(arg0) {
     const ret = getObject(arg0).msCrypto;
     return addHeapObject(ret);
 };
 
-function __wbg_static_accessor_NODE_MODULE_cf6401cc1091279e() {
-    const ret = module;
+function __wbg_newwithlength_e5d69174d6984cd7(arg0) {
+    const ret = new Uint8Array(arg0 >>> 0);
     return addHeapObject(ret);
 };
 
-function __wbg_require_a746e79b322b9336() { return handleError(function (arg0, arg1, arg2) {
-    const ret = getObject(arg0).require(getStringFromWasm0(arg1, arg2));
-    return addHeapObject(ret);
-}, arguments) };
-
-function __wbg_getRandomValues_b99eec4244a475bb() { return handleError(function (arg0, arg1) {
-    getObject(arg0).getRandomValues(getObject(arg1));
-}, arguments) };
-
-function __wbg_randomFillSync_065afffde01daa66() { return handleError(function (arg0, arg1, arg2) {
-    getObject(arg0).randomFillSync(getArrayU8FromWasm0(arg1, arg2));
-}, arguments) };
-
-function __wbg_newnoargs_581967eacc0e2604(arg0, arg1) {
-    const ret = new Function(getStringFromWasm0(arg0, arg1));
-    return addHeapObject(ret);
+function __wbindgen_is_object(arg0) {
+    const val = getObject(arg0);
+    const ret = typeof(val) === 'object' && val !== null;
+    return ret;
 };
-
-function __wbg_call_cb65541d95d71282() { return handleError(function (arg0, arg1) {
-    const ret = getObject(arg0).call(getObject(arg1));
-    return addHeapObject(ret);
-}, arguments) };
 
 function __wbg_self_1ff1d729e9aae938() { return handleError(function () {
     const ret = self.self;
@@ -1855,54 +1901,37 @@ function __wbindgen_is_undefined(arg0) {
     return ret;
 };
 
+function __wbg_newnoargs_581967eacc0e2604(arg0, arg1) {
+    const ret = new Function(getStringFromWasm0(arg0, arg1));
+    return addHeapObject(ret);
+};
+
+function __wbg_call_cb65541d95d71282() { return handleError(function (arg0, arg1) {
+    const ret = getObject(arg0).call(getObject(arg1));
+    return addHeapObject(ret);
+}, arguments) };
+
 function __wbg_call_01734de55d61e11d() { return handleError(function (arg0, arg1, arg2) {
     const ret = getObject(arg0).call(getObject(arg1), getObject(arg2));
     return addHeapObject(ret);
 }, arguments) };
 
-function __wbg_resolve_53698b95aaf7fcf8(arg0) {
-    const ret = Promise.resolve(getObject(arg0));
-    return addHeapObject(ret);
-};
-
-function __wbg_then_f7e06ee3c11698eb(arg0, arg1) {
-    const ret = getObject(arg0).then(getObject(arg1));
-    return addHeapObject(ret);
-};
-
-function __wbg_buffer_085ec1f694018c4f(arg0) {
-    const ret = getObject(arg0).buffer;
-    return addHeapObject(ret);
-};
-
-function __wbg_newwithbyteoffsetandlength_6da8e527659b86aa(arg0, arg1, arg2) {
-    const ret = new Uint8Array(getObject(arg0), arg1 >>> 0, arg2 >>> 0);
-    return addHeapObject(ret);
-};
-
-function __wbg_new_8125e318e6245eed(arg0) {
-    const ret = new Uint8Array(getObject(arg0));
-    return addHeapObject(ret);
-};
-
 function __wbg_set_5cf90238115182c3(arg0, arg1, arg2) {
     getObject(arg0).set(getObject(arg1), arg2 >>> 0);
 };
 
-function __wbg_length_72e2208bbc0efc61(arg0) {
-    const ret = getObject(arg0).length;
-    return ret;
-};
-
-function __wbg_newwithlength_e5d69174d6984cd7(arg0) {
-    const ret = new Uint8Array(arg0 >>> 0);
-    return addHeapObject(ret);
-};
+function __wbg_randomFillSync_dc1e9a60c158336d() { return handleError(function (arg0, arg1) {
+    getObject(arg0).randomFillSync(takeObject(arg1));
+}, arguments) };
 
 function __wbg_subarray_13db269f57aa838d(arg0, arg1, arg2) {
     const ret = getObject(arg0).subarray(arg1 >>> 0, arg2 >>> 0);
     return addHeapObject(ret);
 };
+
+function __wbg_getRandomValues_37fa2ca9e4e07fab() { return handleError(function (arg0, arg1) {
+    getObject(arg0).getRandomValues(getObject(arg1));
+}, arguments) };
 
 function __wbindgen_debug_string(arg0, arg1) {
     const ret = debugString(getObject(arg1));
@@ -1916,13 +1945,28 @@ function __wbindgen_throw(arg0, arg1) {
     throw new Error(getStringFromWasm0(arg0, arg1));
 };
 
-function __wbindgen_memory() {
-    const ret = wasm.memory;
+function __wbg_resolve_53698b95aaf7fcf8(arg0) {
+    const ret = Promise.resolve(getObject(arg0));
     return addHeapObject(ret);
 };
 
-function __wbindgen_closure_wrapper706(arg0, arg1, arg2) {
-    const ret = makeMutClosure(arg0, arg1, 198, __wbg_adapter_22);
+function __wbg_then_f7e06ee3c11698eb(arg0, arg1) {
+    const ret = getObject(arg0).then(getObject(arg1));
+    return addHeapObject(ret);
+};
+
+function __wbindgen_cb_drop(arg0) {
+    const obj = takeObject(arg0).original;
+    if (obj.cnt-- == 1) {
+        obj.a = 0;
+        return true;
+    }
+    const ret = false;
+    return ret;
+};
+
+function __wbindgen_closure_wrapper4777(arg0, arg1, arg2) {
+    const ret = makeMutClosure(arg0, arg1, 169, __wbg_adapter_24);
     return addHeapObject(ret);
 };
 
@@ -1934,9 +1978,9 @@ function __wbindgen_closure_wrapper706(arg0, arg1, arg2) {
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "H": () => (/* binding */ stdout),
 /* harmony export */   "v": () => (/* binding */ messageHandler)
 /* harmony export */ });
+/* unused harmony export stdout */
 function messageHandler({ data: { type, message } }) {
   let colorType = "termWhite";
 
@@ -2009,45 +2053,49 @@ module.exports = __webpack_require__.p + "d7843b8521e02d75a08a.html";
 /***/ ((module, exports, __webpack_require__) => {
 
 /* harmony import */ var WEBPACK_IMPORTED_MODULE_0 = __webpack_require__(2858);
-module.exports = __webpack_require__.v(exports, module.id, "05cefdfcbf7b94478210", {
+module.exports = __webpack_require__.v(exports, module.id, "5023ba18cc3d5fd751eb", {
 	"./index_bg.js": {
+		"__wbg_new_abda76e883ba8a5f": WEBPACK_IMPORTED_MODULE_0/* .__wbg_new_abda76e883ba8a5f */ .a2,
+		"__wbg_stack_658279fe44541cf6": WEBPACK_IMPORTED_MODULE_0/* .__wbg_stack_658279fe44541cf6 */ .KM,
+		"__wbg_error_f851667af71bcfc6": WEBPACK_IMPORTED_MODULE_0/* .__wbg_error_f851667af71bcfc6 */ .iX,
 		"__wbindgen_object_drop_ref": WEBPACK_IMPORTED_MODULE_0/* .__wbindgen_object_drop_ref */ .ug,
 		"__wbindgen_object_clone_ref": WEBPACK_IMPORTED_MODULE_0/* .__wbindgen_object_clone_ref */ .m_,
-		"__wbindgen_string_new": WEBPACK_IMPORTED_MODULE_0/* .__wbindgen_string_new */ .h4,
 		"__wbg_log_1d3ae0273d8f4f8a": WEBPACK_IMPORTED_MODULE_0/* .__wbg_log_1d3ae0273d8f4f8a */ .gE,
-		"__wbindgen_cb_drop": WEBPACK_IMPORTED_MODULE_0/* .__wbindgen_cb_drop */ .G6,
-		"__wbg_process_0cc2ada8524d6f83": WEBPACK_IMPORTED_MODULE_0/* .__wbg_process_0cc2ada8524d6f83 */ .ej,
-		"__wbindgen_is_object": WEBPACK_IMPORTED_MODULE_0/* .__wbindgen_is_object */ .Wl,
-		"__wbg_versions_c11acceab27a6c87": WEBPACK_IMPORTED_MODULE_0/* .__wbg_versions_c11acceab27a6c87 */ .xn,
-		"__wbg_node_7ff1ce49caf23815": WEBPACK_IMPORTED_MODULE_0/* .__wbg_node_7ff1ce49caf23815 */ .OP,
+		"__wbindgen_string_new": WEBPACK_IMPORTED_MODULE_0/* .__wbindgen_string_new */ .h4,
+		"__wbindgen_memory": WEBPACK_IMPORTED_MODULE_0/* .__wbindgen_memory */ .oH,
+		"__wbg_buffer_085ec1f694018c4f": WEBPACK_IMPORTED_MODULE_0/* .__wbg_buffer_085ec1f694018c4f */ .Zf,
+		"__wbg_newwithbyteoffsetandlength_6da8e527659b86aa": WEBPACK_IMPORTED_MODULE_0/* .__wbg_newwithbyteoffsetandlength_6da8e527659b86aa */ .fr,
+		"__wbg_new_8125e318e6245eed": WEBPACK_IMPORTED_MODULE_0/* .__wbg_new_8125e318e6245eed */ .rU,
+		"__wbg_length_72e2208bbc0efc61": WEBPACK_IMPORTED_MODULE_0/* .__wbg_length_72e2208bbc0efc61 */ .Ky,
+		"__wbg_now_9c5990bda04c7e53": WEBPACK_IMPORTED_MODULE_0/* .__wbg_now_9c5990bda04c7e53 */ .B3,
+		"__wbg_crypto_c48a774b022d20ac": WEBPACK_IMPORTED_MODULE_0/* .__wbg_crypto_c48a774b022d20ac */ .Sc,
+		"__wbg_process_298734cf255a885d": WEBPACK_IMPORTED_MODULE_0/* .__wbg_process_298734cf255a885d */ .Vb,
+		"__wbg_versions_e2e78e134e3e5d01": WEBPACK_IMPORTED_MODULE_0/* .__wbg_versions_e2e78e134e3e5d01 */ .cU,
+		"__wbg_node_1cd7a5d853dbea79": WEBPACK_IMPORTED_MODULE_0/* .__wbg_node_1cd7a5d853dbea79 */ .Bj,
 		"__wbindgen_is_string": WEBPACK_IMPORTED_MODULE_0/* .__wbindgen_is_string */ .eY,
-		"__wbg_crypto_2036bed7c44c25e7": WEBPACK_IMPORTED_MODULE_0/* .__wbg_crypto_2036bed7c44c25e7 */ .JC,
-		"__wbg_msCrypto_a21fc88caf1ecdc8": WEBPACK_IMPORTED_MODULE_0/* .__wbg_msCrypto_a21fc88caf1ecdc8 */ .T_,
-		"__wbg_static_accessor_NODE_MODULE_cf6401cc1091279e": WEBPACK_IMPORTED_MODULE_0/* .__wbg_static_accessor_NODE_MODULE_cf6401cc1091279e */ .Mk,
-		"__wbg_require_a746e79b322b9336": WEBPACK_IMPORTED_MODULE_0/* .__wbg_require_a746e79b322b9336 */ .wm,
-		"__wbg_getRandomValues_b99eec4244a475bb": WEBPACK_IMPORTED_MODULE_0/* .__wbg_getRandomValues_b99eec4244a475bb */ .dp,
-		"__wbg_randomFillSync_065afffde01daa66": WEBPACK_IMPORTED_MODULE_0/* .__wbg_randomFillSync_065afffde01daa66 */ .yP,
-		"__wbg_newnoargs_581967eacc0e2604": WEBPACK_IMPORTED_MODULE_0/* .__wbg_newnoargs_581967eacc0e2604 */ .$3,
-		"__wbg_call_cb65541d95d71282": WEBPACK_IMPORTED_MODULE_0/* .__wbg_call_cb65541d95d71282 */ .Od,
+		"__wbg_require_8f08ceecec0f4fee": WEBPACK_IMPORTED_MODULE_0/* .__wbg_require_8f08ceecec0f4fee */ .Wc,
+		"__wbindgen_is_function": WEBPACK_IMPORTED_MODULE_0/* .__wbindgen_is_function */ .o$,
+		"__wbg_msCrypto_bcb970640f50a1e8": WEBPACK_IMPORTED_MODULE_0/* .__wbg_msCrypto_bcb970640f50a1e8 */ .gj,
+		"__wbg_newwithlength_e5d69174d6984cd7": WEBPACK_IMPORTED_MODULE_0/* .__wbg_newwithlength_e5d69174d6984cd7 */ .CN,
+		"__wbindgen_is_object": WEBPACK_IMPORTED_MODULE_0/* .__wbindgen_is_object */ .Wl,
 		"__wbg_self_1ff1d729e9aae938": WEBPACK_IMPORTED_MODULE_0/* .__wbg_self_1ff1d729e9aae938 */ .ey,
 		"__wbg_window_5f4faef6c12b79ec": WEBPACK_IMPORTED_MODULE_0/* .__wbg_window_5f4faef6c12b79ec */ .Qz,
 		"__wbg_globalThis_1d39714405582d3c": WEBPACK_IMPORTED_MODULE_0/* .__wbg_globalThis_1d39714405582d3c */ .E$,
 		"__wbg_global_651f05c6a0944d1c": WEBPACK_IMPORTED_MODULE_0/* .__wbg_global_651f05c6a0944d1c */ .c7,
 		"__wbindgen_is_undefined": WEBPACK_IMPORTED_MODULE_0/* .__wbindgen_is_undefined */ .XP,
+		"__wbg_newnoargs_581967eacc0e2604": WEBPACK_IMPORTED_MODULE_0/* .__wbg_newnoargs_581967eacc0e2604 */ .$3,
+		"__wbg_call_cb65541d95d71282": WEBPACK_IMPORTED_MODULE_0/* .__wbg_call_cb65541d95d71282 */ .Od,
 		"__wbg_call_01734de55d61e11d": WEBPACK_IMPORTED_MODULE_0/* .__wbg_call_01734de55d61e11d */ .Nl,
-		"__wbg_resolve_53698b95aaf7fcf8": WEBPACK_IMPORTED_MODULE_0/* .__wbg_resolve_53698b95aaf7fcf8 */ .ot,
-		"__wbg_then_f7e06ee3c11698eb": WEBPACK_IMPORTED_MODULE_0/* .__wbg_then_f7e06ee3c11698eb */ .vv,
-		"__wbg_buffer_085ec1f694018c4f": WEBPACK_IMPORTED_MODULE_0/* .__wbg_buffer_085ec1f694018c4f */ .Zf,
-		"__wbg_newwithbyteoffsetandlength_6da8e527659b86aa": WEBPACK_IMPORTED_MODULE_0/* .__wbg_newwithbyteoffsetandlength_6da8e527659b86aa */ .fr,
-		"__wbg_new_8125e318e6245eed": WEBPACK_IMPORTED_MODULE_0/* .__wbg_new_8125e318e6245eed */ .rU,
 		"__wbg_set_5cf90238115182c3": WEBPACK_IMPORTED_MODULE_0/* .__wbg_set_5cf90238115182c3 */ .H6,
-		"__wbg_length_72e2208bbc0efc61": WEBPACK_IMPORTED_MODULE_0/* .__wbg_length_72e2208bbc0efc61 */ .Ky,
-		"__wbg_newwithlength_e5d69174d6984cd7": WEBPACK_IMPORTED_MODULE_0/* .__wbg_newwithlength_e5d69174d6984cd7 */ .CN,
+		"__wbg_randomFillSync_dc1e9a60c158336d": WEBPACK_IMPORTED_MODULE_0/* .__wbg_randomFillSync_dc1e9a60c158336d */ .F,
 		"__wbg_subarray_13db269f57aa838d": WEBPACK_IMPORTED_MODULE_0/* .__wbg_subarray_13db269f57aa838d */ .PY,
+		"__wbg_getRandomValues_37fa2ca9e4e07fab": WEBPACK_IMPORTED_MODULE_0/* .__wbg_getRandomValues_37fa2ca9e4e07fab */ .TE,
 		"__wbindgen_debug_string": WEBPACK_IMPORTED_MODULE_0/* .__wbindgen_debug_string */ .fY,
 		"__wbindgen_throw": WEBPACK_IMPORTED_MODULE_0/* .__wbindgen_throw */ .Or,
-		"__wbindgen_memory": WEBPACK_IMPORTED_MODULE_0/* .__wbindgen_memory */ .oH,
-		"__wbindgen_closure_wrapper706": WEBPACK_IMPORTED_MODULE_0/* .__wbindgen_closure_wrapper706 */ .sh
+		"__wbg_resolve_53698b95aaf7fcf8": WEBPACK_IMPORTED_MODULE_0/* .__wbg_resolve_53698b95aaf7fcf8 */ .ot,
+		"__wbg_then_f7e06ee3c11698eb": WEBPACK_IMPORTED_MODULE_0/* .__wbg_then_f7e06ee3c11698eb */ .vv,
+		"__wbindgen_cb_drop": WEBPACK_IMPORTED_MODULE_0/* .__wbindgen_cb_drop */ .G6,
+		"__wbindgen_closure_wrapper4777": WEBPACK_IMPORTED_MODULE_0/* .__wbindgen_closure_wrapper4777 */ .Fu
 	}
 });
 
