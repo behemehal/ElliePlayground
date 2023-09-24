@@ -71,7 +71,10 @@ export default async function editor(
   document.querySelector("#container_left").addEventListener(
     "transitionend",
     () => {
-      document.querySelector("#container_left").style["transition"] = null;
+      setTimeout(() => {
+        document.querySelector("#container_left").style["transition"] = null;
+        _editor.layout();
+      }, 500);
       _editor.layout();
     },
   );
@@ -79,7 +82,10 @@ export default async function editor(
   document.querySelector("#container_left").addEventListener(
     "webkitTransitionEnd",
     () => {
-      document.querySelector("#container_left").style["transition"] = null;
+      setTimeout(() => {
+        document.querySelector("#container_left").style["transition"] = null;
+        _editor.layout();
+      }, 500);
       _editor.layout();
     },
   );
@@ -142,8 +148,8 @@ export default async function editor(
   };
 
   document.getElementById("clr_btn").onclick = () => {
-    document.querySelector(".bottom_panel").innerHTML +=
-        `<p class="termGreen">Console cleaned</p>`;
+    document.querySelector(".bottom_panel").innerHTML =
+      `<p class="termGreen">Console cleaned</p>`;
   };
 
   return (value) => {

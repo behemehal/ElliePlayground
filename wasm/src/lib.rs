@@ -1,10 +1,14 @@
 pub mod utils;
 
 extern crate wasm_bindgen;
-use utils::{render_error, ColorTerminal, Repository, StringWrite, VecReader};
+use utils::{render_error, ColorTerminal, Repository, StringWrite, VecReader, ELLIE_CORE};
 use wasm_bindgen::prelude::*;
 
-use std::sync::{mpsc, Arc, Mutex};
+use std::{
+    panic,
+    sync::{mpsc, Arc, Mutex},
+};
+use web_time::SystemTime;
 
 use ellie_engine::{
     compiler,
@@ -18,20 +22,19 @@ use ellie_engine::{
         program::{Program, VmProgram},
         raw_type::StaticRawType,
         thread::{Isolate, Thread},
-        utils::{ProgramReader, ThreadExit, VmNativeAnswer, VmNativeCallParameters},
+        utils::{ProgramReader, StepResult, ThreadExit, VmNativeAnswer, VmNativeCallParameters},
     },
     engine_constants, tokenizer,
     utils::CompilerSettings,
     vm::{parse_debug_file, RFile},
 };
+#[macro_use]
+extern crate lazy_static;
+extern crate wee_alloc;
 
 use crate::utils::render_warning;
-
-extern crate wee_alloc;
 #[global_allocator]
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
-
-static ELLIE_CORE: &'static str = include_str!("../core.eib");
 
 macro_rules! log {
     ( $( $t:tt )* ) => {
@@ -39,8 +42,9 @@ macro_rules! log {
     }
 }
 
-pub fn set_panic_hook() {
-    console_error_panic_hook::set_once();
+#[wasm_bindgen]
+pub fn init() {
+    panic::set_hook(Box::new(console_error_panic_hook::hook));
 }
 
 #[wasm_bindgen]
@@ -120,7 +124,7 @@ pub fn byte_code_generate(stdout: JsValue, codec: &str) -> Option<String> {
         }
     };
 
-    let eib = match serde_json::from_str::<Module>(ELLIE_CORE) {
+    let eib = match serde_json::from_str::<Module>(&ELLIE_CORE) {
         Ok(e) => e,
         Err(e) => {
             send_message_to_js(
@@ -150,7 +154,7 @@ pub fn byte_code_generate(stdout: JsValue, codec: &str) -> Option<String> {
                     description: String::from("No description"),
                     experimental_features: false,
                     byte_code_architecture: PlatformArchitecture::B32,
-                    version: Version::build_from_string("0.1.0".to_string()),
+                    version: Version::build_from_string(&"0.1.0".to_string()),
                 },
             ) {
                 Ok(compile_output) => {
@@ -184,6 +188,8 @@ pub fn byte_code_generate(stdout: JsValue, codec: &str) -> Option<String> {
                     Some(string_reader.data.clone())
                 }
                 Err(errors) => {
+                    log!("compile error");
+
                     send_message_to_js(
                         "error_display",
                         print_errors(
@@ -334,7 +340,7 @@ pub fn compile(stdout: JsValue, codec: &str) -> Option<CompileResult> {
         }
     };
 
-    let eib = match serde_json::from_str::<Module>(ELLIE_CORE) {
+    let eib = match serde_json::from_str::<Module>(&ELLIE_CORE) {
         Ok(e) => e,
         Err(e) => {
             send_message_to_js(
@@ -364,7 +370,7 @@ pub fn compile(stdout: JsValue, codec: &str) -> Option<CompileResult> {
                     description: String::from("No description"),
                     experimental_features: false,
                     byte_code_architecture: PlatformArchitecture::B32,
-                    version: Version::build_from_string("0.1.0".to_string()),
+                    version: Version::build_from_string(&"0.1.0".to_string()),
                 },
             ) {
                 Ok(compile_output) => {
@@ -544,6 +550,7 @@ pub fn run(stdout: JsValue, js_objects: js_sys::Uint8Array, debug_file: String) 
                                 log!("Failed to send message to js, maybe the channel has been closed.");
                             }
                         };
+                        log!("info: {}", dynamic_value.to_string());
                         _send_message_to_js("info", dynamic_value.to_string());
                         VmNativeAnswer::Ok(VmNativeCallParameters::Static(
                             StaticRawType::from_void(),
@@ -558,174 +565,192 @@ pub fn run(stdout: JsValue, js_objects: js_sys::Uint8Array, debug_file: String) 
         }),
     )));
 
+    ellie_core_module.register_element(ModuleElements::Function(FunctionElement::new(
+        "timestamp",
+        Box::new(|_, args| {
+            if !args.is_empty() {
+                return VmNativeAnswer::RuntimeError(
+                    "Signature mismatch expected 0 argument(s)".to_string(),
+                );
+            }
+            VmNativeAnswer::Ok(VmNativeCallParameters::Static(StaticRawType::from_int(
+                SystemTime::now()
+                    .duration_since(SystemTime::UNIX_EPOCH)
+                    .unwrap()
+                    .as_secs() as isize,
+            )))
+        }),
+    )));
+
     let mut module_manager = ModuleManager::new();
 
     module_manager.register_module(ellie_core_module);
+    let mut vm_program: VmProgram = VmProgram::new();
 
-    for trace in program.native_call_traces {
-        let trace_path = format!("{}->{}", trace.module_name, trace.function_name);
-        if let Some(cause) = module_manager.add_native_call_trace(trace) {
-            send_message_to_js(
-                "log",
-                format!(
-                    "{}Error:{} Failed to register native function: {}'{}'{} {}[{:?}]{}",
-                    color_terminal.color(Colors::Red),
-                    color_terminal.color(Colors::Reset),
-                    color_terminal.color(Colors::Magenta),
-                    cause,
-                    color_terminal.color(Colors::Reset),
-                    color_terminal.color(Colors::Cyan),
-                    trace_path,
-                    color_terminal.color(Colors::Reset)
-                ),
-            );
-            std::process::exit(1);
-        }
-    }
-    let vm_program = VmProgram::new_from_vector(program.instructions);
+    vm_program.fill_from_vector(program.instructions);
+    vm_program.fill_traces(program.native_call_traces.clone());
 
     let isolate = Isolate::new();
-    let mut thread = Thread::new(program.main.hash, PlatformArchitecture::B64, isolate);
+    let mut thread = Thread::new(program.main.hash, PlatformArchitecture::B32, isolate);
     thread.build_thread(program.main.clone());
-    let output = thread.run(&mut module_manager, &vm_program);
-    match output {
-        ThreadExit::ExitGracefully => {
-            send_message_to_js(
-                "info",
-                format!(
-                    "{}[VM]{}: Exited Gracefully \n\n",
-                    color_terminal.color(Colors::Yellow),
-                    color_terminal.color(Colors::Reset),
-                ),
-            );
-            /* send_message_to_js(
-                "info",
-                format!(
-                    "{}[VM]{}: Heap Dump\n\n{}",
-                    color_terminal.color(Colors::Yellow),
-                    color_terminal.color(Colors::Reset),
-                    thread.isolate.heap_dump(),
-                ),
-            );
-            send_message_to_js(
-                "info",
-                format!(
-                    "{}[VM]{}: Stack Dump\n\n{}",
-                    color_terminal.color(Colors::Yellow),
-                    color_terminal.color(Colors::Reset),
-                    thread.isolate.stack_dump(),
-                ),
-            );
-            */
-        }
-        ThreadExit::Panic(panic) => {
-            send_message_to_js(
-                "log",
-                format!(
-                    "\n{}ThreadPanic{} : {}{:?}{}",
-                    color_terminal.color(Colors::Red),
-                    color_terminal.color(Colors::Reset),
-                    color_terminal.color(Colors::Cyan),
-                    panic.reason,
-                    color_terminal.color(Colors::Reset),
-                ),
-            );
-            for frame in panic.stack_trace {
-                match &debug_file {
-                    Some(debug_file) => {
-                        let coresponding_header = debug_file
-                            .debug_headers
-                            .iter()
-                            .find(|x| frame.pos >= x.start_end.0 && frame.pos <= x.start_end.1);
 
-                        match coresponding_header {
-                            Some(e) => {
-                                fn get_real_path(
-                                    debug_header: &DebugHeader,
-                                    debug_file: &DebugInfo,
-                                ) -> String {
-                                    let module_name = debug_header
-                                        .module_name
-                                        .split("<ellie_module_")
-                                        .nth(1)
-                                        .unwrap()
-                                        .split(">")
-                                        .nth(0)
-                                        .unwrap();
-                                    let module_path = debug_file
-                                        .module_map
-                                        .iter()
-                                        .find(|map| module_name == map.module_name);
-                                    let real_path = match module_path {
-                                        Some(module_path) => match &module_path.module_path {
-                                            Some(module_path) => {
-                                                let new_path = debug_header.module_name.clone();
-                                                let starter_name =
-                                                    format!("<ellie_module_{}>", module_name);
-                                                new_path.replace(&starter_name, &module_path)
-                                            }
-                                            None => debug_header.module_name.clone(),
-                                        },
-                                        None => debug_header.module_name.clone(),
-                                    };
-                                    real_path
+    let mut i = 0;
+    loop {
+        match thread.step(&mut module_manager, &vm_program) {
+            StepResult::Step => {
+                i += 1;
+                if i > 1_000_000 {
+                    send_message_to_js(
+                        "info",
+                        format!(
+                            "{}[VM]{}: Execution canceled, over {}100_000{} cycles has passed.\n\n",
+                            color_terminal.color(Colors::Yellow),
+                            color_terminal.color(Colors::Reset),
+                            color_terminal.color(Colors::Red),
+                            color_terminal.color(Colors::Reset),
+                        ),
+                    );
+                    send_message_to_js(
+                        "info",
+                        format!(
+                            "{}[:)]{}: Try it on real machine :)\n\n",
+                            color_terminal.color(Colors::Red),
+                            color_terminal.color(Colors::Reset),
+                        ),
+                    );
+                    break;
+                }
+            }
+            StepResult::ThreadExit(thread_exit) => match thread_exit {
+                ThreadExit::ExitGracefully => {
+                    send_message_to_js(
+                        "info",
+                        format!(
+                            "{}[VM]{}: Exited Gracefully with {}'{i}'{} cycles \n\n",
+                            color_terminal.color(Colors::Yellow),
+                            color_terminal.color(Colors::Reset),
+                            color_terminal.color(Colors::Green),
+                            color_terminal.color(Colors::Reset),
+                        ),
+                    );
+                    break;
+                }
+                ThreadExit::Panic(panic) => {
+                    send_message_to_js(
+                        "log",
+                        format!(
+                            "\n{}ThreadPanic{} : {}{:?}{}",
+                            color_terminal.color(Colors::Red),
+                            color_terminal.color(Colors::Reset),
+                            color_terminal.color(Colors::Cyan),
+                            panic.reason,
+                            color_terminal.color(Colors::Reset),
+                        ),
+                    );
+                    for frame in panic.stack_trace {
+                        match &debug_file {
+                            Some(debug_file) => {
+                                let coresponding_header =
+                                    debug_file.debug_headers.iter().find(|x| {
+                                        frame.pos >= x.start_end.0 && frame.pos <= x.start_end.1
+                                    });
+
+                                match coresponding_header {
+                                    Some(e) => {
+                                        fn get_real_path(
+                                            debug_header: &DebugHeader,
+                                            debug_file: &DebugInfo,
+                                        ) -> String {
+                                            let module_name = debug_header
+                                                .module_name
+                                                .split("<ellie_module_")
+                                                .nth(1)
+                                                .unwrap()
+                                                .split(">")
+                                                .nth(0)
+                                                .unwrap();
+                                            let module_path = debug_file
+                                                .module_map
+                                                .iter()
+                                                .find(|map| module_name == map.module_name);
+                                            let real_path = match module_path {
+                                                Some(module_path) => match &module_path.module_path
+                                                {
+                                                    Some(module_path) => {
+                                                        let new_path =
+                                                            debug_header.module_name.clone();
+                                                        let starter_name = format!(
+                                                            "<ellie_module_{}>",
+                                                            module_name
+                                                        );
+                                                        new_path
+                                                            .replace(&starter_name, &module_path)
+                                                    }
+                                                    None => debug_header.module_name.clone(),
+                                                },
+                                                None => debug_header.module_name.clone(),
+                                            };
+                                            real_path
+                                        }
+
+                                        let real_path = get_real_path(e, debug_file);
+
+                                        send_message_to_js(
+                                            "log",
+                                            format!(
+                                                "{}    at {}:{}:{}",
+                                                color_terminal.color(Colors::Green),
+                                                real_path,
+                                                e.pos.range_start.0 + 1,
+                                                e.pos.range_start.1 + 1,
+                                            ),
+                                        );
+                                    }
+                                    None => {
+                                        send_message_to_js(
+                                            "log",
+                                            format!(
+                                                "{}    at {}:{}",
+                                                color_terminal.color(Colors::Green),
+                                                "frame.name",
+                                                frame.pos
+                                            ),
+                                        );
+                                    }
                                 }
-
-                                let real_path = get_real_path(e, debug_file);
-
-                                send_message_to_js(
-                                    "log",
-                                    format!(
-                                        "{}    at {}:{}:{}",
-                                        color_terminal.color(Colors::Green),
-                                        real_path,
-                                        e.pos.range_start.0 + 1,
-                                        e.pos.range_start.1 + 1,
-                                    ),
-                                );
                             }
                             None => {
                                 send_message_to_js(
                                     "log",
                                     format!(
-                                        "{}    at {}:{}",
+                                        "{}    at {}:{} ({} + {})",
                                         color_terminal.color(Colors::Green),
                                         "frame.name",
-                                        frame.pos
+                                        frame.pos + frame.frame_pos,
+                                        frame.pos,
+                                        frame.frame_pos,
                                     ),
                                 );
                             }
                         }
                     }
-                    None => {
-                        send_message_to_js(
-                            "log",
-                            format!(
-                                "{}    at {}:{} ({} + {})",
-                                color_terminal.color(Colors::Green),
-                                "frame.name",
-                                frame.pos + frame.frame_pos,
-                                frame.pos,
-                                frame.frame_pos,
-                            ),
-                        );
+                    if debug_file.is_none() {
+                        send_message_to_js("log", format!(
+                                   "\n{}NoDebugFile{} : {}Given error represents stack locations, provide a debug info file to get more readable info{}",
+                                   color_terminal.color(Colors::Yellow),
+                                   color_terminal.color(Colors::Reset),
+                                   color_terminal.color(Colors::Cyan),
+                                   color_terminal.color(Colors::Reset),
+                               ));
                     }
+                    break;
                 }
-            }
-            if debug_file.is_none() {
-                send_message_to_js("log", format!(
-                    "\n{}NoDebugFile{} : {}Given error represents stack locations, provide a debug info file to get more readable info{}",
-                    color_terminal.color(Colors::Yellow),
-                    color_terminal.color(Colors::Reset),
-                    color_terminal.color(Colors::Cyan),
-                    color_terminal.color(Colors::Reset),
-                ));
-            }
+            },
         }
     }
 }
 
-#[wasm_bindgen( js_name = "getInfo" )]
+#[wasm_bindgen(js_name = "getInfo")]
 pub fn get_info() -> String {
     let color_terminal = ColorTerminal;
     format!(

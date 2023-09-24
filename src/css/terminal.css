@@ -1,27 +1,54 @@
 .termWhite {
     color: #fff !important;
+    overflow: auto;
 }
 
 .termRed {
     color: #ff0000 !important;
+    overflow: auto;
 }
 
 .termGreen {
     color: #00ff00 !important;
+    overflow: auto;
 }
 
 .termYellow {
     color: #ffff00 !important;
+    overflow: auto;
 }
 
 .termCyan {
     color: #00ffff !important;
+    overflow: auto;
 }
 
 .termBlue {
     color: #0000ff !important;
+    overflow: auto;
 }
 
 .termMagenta {
     color: #ff00ff !important;
+    overflow: auto;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f5eaef; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #884a6f; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #884a6f; 
 }

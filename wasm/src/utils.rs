@@ -13,6 +13,10 @@ use ellie_engine::{
     utils::{MainProgram, ProgramRepository},
 };
 
+lazy_static! {
+    pub static ref ELLIE_CORE: &'static str = include_str!("../core.json");
+}
+
 pub fn render_error(error: error::Error) -> String {
     format!("{{\"message_type\": \"error\",\"message\": \"{}\",\"range_start\": [{}, {}],\"range_end\": [{}, {}], \"reference\": {}}}",
     error.builded_message.builded.replace("\"", "\\\""),
@@ -125,10 +129,7 @@ pub struct VecReader<'a> {
 
 impl<'a> VecReader<'a> {
     pub fn new(data: &'a mut Vec<u8>) -> Self {
-        VecReader {
-            data,
-            pos: 0,
-        }
+        VecReader { data, pos: 0 }
     }
 }
 

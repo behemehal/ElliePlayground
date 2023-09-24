@@ -1,0 +1,44 @@
+@dont_fix_variant;
+pub class int {}
+
+@dont_fix_variant;
+pub class float {}
+
+@dont_fix_variant;
+pub class double {}
+
+@dont_fix_variant;
+pub class dyn {}
+
+@dont_fix_variant;
+pub class string {}
+
+@dont_fix_variant;
+pub class char {}
+
+@dont_fix_variant;
+pub class bool {}
+
+@dont_fix_variant;
+pub class void {}
+
+@dont_fix_variant;
+pub class nullAble {}
+
+@dont_fix_variant;
+pub class function {}
+
+@dont_fix_variant;
+pub class array {
+    co(arr);
+    v arr: dyn;
+}
+
+pub fn println(s: string);
+
+pub fn timestamp() : int;
+
+@ellie_deep_cast=true;
+c true : bool = 1 as bool;
+@ellie_deep_cast=false;
+c false : bool = 0 as bool;

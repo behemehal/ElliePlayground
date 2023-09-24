@@ -21,6 +21,17 @@ const loopExample = `fn main() {
     }
 }`;
 
+const loopCharCombiner = `fn main() {
+    v chars = ['e', 'l', 'l', 'i', 'e'];
+    v count = 0;
+    v newStr = "";
+    loop chars.len() > count {
+        newStr += chars[count] as string;
+        count += 1;
+    }
+    println(newStr);
+}`;
+
 const functionExample = `fn main() {
 
     fn collect(a: int, b: int) : int {
@@ -58,18 +69,62 @@ const fibonacciWithLoop = `fn main() {
     println("fib(10) = " + fib);
 }`;
 
+const classExample = `class Human {
+    co(name, age);
+  
+    v name: string;
+    v age: int;
+  
+    fn introduce() : string {
+      ret "Hello my name is " + self.name + ", I born at " + (2023 - self.age);
+    }
+  } 
+  
+  fn main() {
+    v human = new Human("Ahmetcan", 22);
+  
+    println(human.introduce());
+}`;
+
+const speed = `fn main() {
+    v now = timestamp();
+    v x = 1000000;
+    println("START");
+  
+    loop x > 0 {
+      x -= 1;
+    }
+    v took = timestamp() - now;
+    println("Operation took " + took +  " seconds.");
+}`;
+
 export default [
-  { name: "Hello World", title: "helloWorld", code: helloWorld },
-  { name: "Loop Example", title: "loopExample", code: loopExample },
-  { name: "Function Example", title: "functionExample", code: functionExample },
-  {
-    name: "Fibonacci Recursion",
-    title: "fibonacciWithRecursion",
-    code: fibonacciWithRecursion,
-  },
-  {
-    name: "Fibonacci Loop",
-    title: "fibonacciWithLoop",
-    code: fibonacciWithLoop,
-  },
+    { name: "Hello World", title: "helloWorld", code: helloWorld },
+    { name: "Loop Example", title: "loopExample", code: loopExample },
+    { name: "Function Example", title: "functionExample", code: functionExample },
+    {
+        name: "Fibonacci Recursion",
+        title: "fibonacciWithRecursion",
+        code: fibonacciWithRecursion,
+    },
+    {
+        name: "Fibonacci Loop",
+        title: "fibonacciWithLoop",
+        code: fibonacciWithLoop,
+    },
+    {
+        name: "Loop over Char",
+        title: "loopCharCombiner",
+        code: loopCharCombiner,
+    },
+    {
+        name: "Class Example",
+        title: "classExample",
+        code: classExample
+    },
+    {
+        name: "Speed Test",
+        title: "speedTest",
+        code: speed
+    }
 ];

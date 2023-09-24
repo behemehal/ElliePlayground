@@ -10,13 +10,13 @@ wasm-opt = false
 crate-type = ["cdylib"]
 
 [dependencies]
-ellie_engine = { version = "0.9.0", git = "https://github.com/behemehal/Ellie-Language", branch = "StaticArray", default-features = false, features = [
+ellie_engine = { default-features = false, features = [
   "compiler",
   "vm",
   "renderer_utils",
   "fmt",
   "std",
-] }
+], path = "./Ellie-Language/ellie_engine" }
 wasm-bindgen = "0.2.87"
 wasm-bindgen-futures = "0.4.37"
 console_error_panic_hook = { version = "0.1.7" }
@@ -24,7 +24,15 @@ wee_alloc = { version = "0.4.5" }
 js-sys = "0.3.64"
 getrandom = { version = "0.2", features = ["js"] }
 serde_json = { version = "1.0", default-features = false, features = ["alloc"] }
+spin = "0.9.8"
+bincode = { version = "1.0" }
+lazy_static = "1.4.0"
+web-time = "0.2.0"
 
 [dependencies.web-sys]
 version = "0.3.64"
 features = ['console']
+
+[profile.release]
+lto = true
+opt-level = "z"
