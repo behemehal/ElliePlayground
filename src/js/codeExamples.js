@@ -95,7 +95,7 @@ const speed = `fn main() {
       x -= 1;
     }
     v took = timestamp() - now;
-    println("Operation took " + took +  " seconds.");
+    println("Operation took " + took +  "ms.");
 }`;
 
 export default [

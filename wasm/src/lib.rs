@@ -577,7 +577,7 @@ pub fn run(stdout: JsValue, js_objects: js_sys::Uint8Array, debug_file: String) 
                 SystemTime::now()
                     .duration_since(SystemTime::UNIX_EPOCH)
                     .unwrap()
-                    .as_secs() as isize,
+                    .as_millis() as isize,
             )))
         }),
     )));
