@@ -29,6 +29,7 @@ module.exports = {
       outDir: path.resolve(__dirname, "./src/js/pkg"),
       pluginLogLevel: 'error',
       args: '--log-level error',
+      forceMode: "release",
     }),
   ],
   optimization: {

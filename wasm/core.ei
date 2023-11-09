@@ -32,9 +32,15 @@ pub class function {}
 pub class array {
     co(arr);
     v arr: dyn;
+
+    pub fn len() : int {
+        ret array_len(self.arr);
+    }
 }
 
 pub fn println(s: string);
+
+pub fn array_len(value: dyn): int;
 
 pub fn timestamp() : int;
 

@@ -56,7 +56,7 @@ const fibonacciWithRecursion = `fn main() {
 const fibonacciWithLoop = `fn main() {
     v last = 0;
     v current = 1;
-    v count = 0;
+    v count = 2;
     v fib = 0;
 
     loop count <= 10 {

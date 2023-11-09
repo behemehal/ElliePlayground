@@ -11,7 +11,7 @@ document.querySelector(".bottom_panel").innerHTML +=
   `<p class="termMagenta">Ellie Playground</p><br>`;
 
 async function main() {
-  let setEditor = await init(onCodeRun, onByteCodeGenerate, onCodeFormat);
+  const setEditor = await init(onCodeRun, onByteCodeGenerate, onCodeFormat);
   const worker = new Worker(new URL("./ellieworker.js", import.meta.url));
   worker.onmessage = (data) => {
     if (data.data.type === "formatedCode") {
