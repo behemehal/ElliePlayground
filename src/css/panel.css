@@ -33,6 +33,7 @@
   background-color: #1e1e1e;
   width: 100%;
   border: #f5eaef;
+  min-height: 50%;
 }
 
 .upper_panel #container_right_up {
@@ -54,10 +55,14 @@
   font-family: Monospace;
   white-space: pre;
   font-size: 10pt;
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: 0.15em solid orange; /* The typwriter cursor */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: 0.15em; /* Adjust as needed */
+  overflow: hidden;
+  /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid orange;
+  /* The typwriter cursor */
+  margin: 0 auto;
+  /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15em;
+  /* Adjust as needed */
   border-right: .05em solid;
   animation: caret 1s steps(1) infinite;
 }
@@ -73,4 +78,93 @@
   -webkit-user-select: none;
   user-select: none;
   cursor: w-resize;
+}
+
+.run-panel {
+  margin-bottom: 15px;
+  margin-top: 5px
+}
+
+.run-buttons {
+  position: sticky;
+  bottom: 0;
+  width: auto;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(70, 43, 69, 0.8);
+}
+
+.vhidden {
+  opacity: 0;
+  position: absolute;
+  left: -9999px;
+}
+
+.main-editor {
+  width: 100%;
+  height: calc(100vh - 40px);
+  padding-top: 15px !important;
+  padding-bottom: 0 !important;
+  padding-right: 0 !important;
+  padding-left: 0px !important;
+}
+
+
+.ellie-console-input {
+  background: transparent;
+  height: 16px;
+  border: none;
+  color: white;
+}
+
+.ellie-console-input:focus {
+  outline: none;
+}
+
+.ellie-console-input::placeholder {
+  color: #fff;
+}
+
+
+.ellie-console-input-container {
+  position: relative;
+}
+
+.ellie-console-input-container span {
+  position: absolute;
+  font-weight: 100;
+  font-size: 17px;
+  top: -2px;
+  left: 0px;
+  animation: 1s blink step-end infinite;
+}
+
+@keyframes blink {
+
+  from,
+  to {
+    color: white;
+  }
+
+  50% {
+    color: black;
+  }
+}
+
+@-moz-keyframes blink {
+
+  from,
+  to {
+    color: white;
+  }
+
+  50% {
+    color: black;
+  }
+}
+
+.ellie-console-input-container input:focus+span {
+  display: none;
 }

@@ -4,13 +4,16 @@ import "../css/theme.css";
 import "../index.html";
 import "../scss/styles.scss";
 import init from "./monaco.js";
-import { getInfo } from "./pkg/index.js";
+import { Tab } from "bootstrap";
 import { messageHandler } from "./utils.js";
 
 document.querySelector(".bottom_panel").innerHTML +=
   `<p class="termMagenta">Ellie Playground</p><br>`;
 
+new Tab('#nav-tab')
+
 async function main() {
+  let autoScroll = false;
   const setEditor = await init(onCodeRun, onByteCodeGenerate, onCodeFormat);
   const worker = new Worker(new URL("./ellieworker.js", import.meta.url));
   worker.onmessage = (data) => {
@@ -19,7 +22,7 @@ async function main() {
     } else if (data.data.type === "byteCodeGenerated") {
       setEditor(data.data.message);
     } else {
-      messageHandler(data);
+      messageHandler(data, autoScroll);
     }
   };
 
@@ -35,7 +38,7 @@ async function main() {
           type: "error",
           message: err.message,
         },
-      });
+      }, autoScroll);
     }
   }
 
@@ -51,7 +54,7 @@ async function main() {
           type: "error",
           message: err.message,
         },
-      });
+      }, autoScroll);
     }
   }
 
@@ -68,7 +71,19 @@ async function main() {
           type: "error",
           message: err.message,
         },
-      });
+      }, autoScroll);
+    }
+  }
+
+  document.getElementById('autoScrollLogs').onchange = function (e) {
+    autoScroll = e.target.checked;
+    if (autoScroll) {
+      document.querySelector(".bottom_panel").scrollTop = document.querySelector(
+        ".bottom_panel"
+      ).scrollHeight;
+      messageHandler({ data: { type: "info", message: "Auto Scroll: Enabled" } });
+    } else {
+      messageHandler({ data: { type: "info", message: "Auto Scroll: Disabled" } });
     }
   }
 }

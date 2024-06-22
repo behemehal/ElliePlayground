@@ -6,6 +6,9 @@ edition = "2021"
 [package.metadata]
 wasm-opt = false
 
+[package.metadata.wasm-pack.profile.release]
+wasm-opt = false
+
 [lib]
 crate-type = ["cdylib"]
 
@@ -27,11 +30,16 @@ serde_json = { version = "1.0", default-features = false, features = ["alloc"] }
 spin = "0.9.8"
 bincode = { version = "1.0" }
 lazy_static = "1.4.0"
-web-time = "0.2.0"
+web-time = "1.1.0"
+async-std = "1.10"
 
 [dependencies.web-sys]
 version = "0.3.64"
-features = ['console']
+features = [
+  'console',
+  'EventListener',
+  'Worker',
+]
 
 [profile.release]
 lto = true

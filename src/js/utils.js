@@ -1,4 +1,4 @@
-export function messageHandler({ data: { type, message } }) {
+export function messageHandler({ data: { type, message } }, autoScroll = false) {
   let colorType = "termWhite";
 
   switch (type) {
@@ -19,6 +19,16 @@ export function messageHandler({ data: { type, message } }) {
   }
   document.querySelector(".bottom_panel").innerHTML +=
     `<p class="${colorType}">${message}</p>`;
+
+  if (autoScroll) {
+    document.querySelector(".bottom_panel").scrollIntoView({
+      behavior: 'smooth'
+    })
+
+    document.querySelector(".bottom_panel").scrollTop = document.querySelector(
+      ".bottom_panel"
+    ).scrollHeight;
+  }
 }
 
 export function stdout(message) {

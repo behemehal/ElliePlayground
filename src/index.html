@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-ZLTTGZYE80"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZLTTGZYE80"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -65,51 +62,26 @@
   </head>
   <body>
     <header>
-      <nav
-        class="navbar navbar-expand-md fixed-top bg-theme navbar-theme dark-section p-0"
-      >
+      <nav class="navbar navbar-expand-md fixed-top bg-theme navbar-theme dark-section p-0">
         <div class="container-fluid mt-3">
           <a class="navbar-brand" href="/">
             <span>Ellie<span style="color: #884a6f">Playground</span></span>
           </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarCollapse"
-            aria-controls="navbarCollapse"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <ul
-            class="nav col-12 col-md-auto mb-2 justify-content-end mb-md-0 collapse navbar-collapse"
-            id="navbarCollapse"
-          >
+          <ul class="nav col-12 col-md-auto mb-2 justify-content-end mb-md-0 collapse navbar-collapse" id="navbarCollapse">
             <li>
-              <a class="nav-link px-2" href="https://www.ellie-lang.org"
-                >Main Page</a
-              >
+              <a class="nav-link px-2" href="https://www.ellie-lang.org">Main Page</a>
             </li>
             <li>
-              <a
-                class="nav-link px-2"
-                href="https://www.ellie-lang.org/blog.html"
-                >Blog</a
-              >
+              <a class="nav-link px-2" href="https://www.ellie-lang.org/blog.html">Blog</a>
             </li>
             <li>
-              <a
-                class="nav-link px-2"
-                href="https://www.ellie-lang.org/releases.html"
-                >Releases</a
-              >
+              <a class="nav-link px-2" href="https://www.ellie-lang.org/releases.html">Releases</a>
             </li>
             <li>
-              <a class="nav-link px-2" href="https://docs.ellie-lang.org"
-                >Docs</a
-              >
+              <a class="nav-link px-2" href="https://docs.ellie-lang.org">Docs</a>
             </li>
             <li>
               <a class="nav-link px-2" href="https://lia.ellie-lang.org">Lia</a>
@@ -118,17 +90,14 @@
         </div>
       </nav>
     </header>
-    <main
-      class="dark-section section"
-      style="
+    <main class="dark-section section" style="
         width: 100%;
         height: calc(100vh - 40px);
         padding-top: 15px !important;
         padding-bottom: 0 !important;
         padding-right: 0 !important;
         padding-left: 0px !important;
-      "
-    >
+      ">
       <div class="panel">
         <div class="left_panel">
           <div id="container_left">
@@ -142,123 +111,123 @@
 
         <div class="right_panel">
           <div class="upper_panel">
-            <div>
+            <div class="pt-3">
               <br />
-              <h3 style="text-align: center">Ellie Playground</h3>
-              <details open>
-                <summary>
-                  <span>About</span>
-                </summary>
-                <p>
-                  This is a playground for Ellie. It is a simple editor that
-                  allows you to write code in Ellie. You can run the code and
-                  see the output.
-                </p>
-              </details>
-              <details>
-                <summary><span>Language Items</span></summary>
-                <br />
-                <ul>
-                  <li>Variables</li>
-                  <code>
-                    v variable_type = 123;<br />
-                    c constant_variable = 123;
-                  </code>
-                </ul>
-                <ul>
-                  <li>Loop</li>
-                  <code>
-                    v continue = true;<br />
-                    loop continue {<br />
-                    println("Hello World");<br />
-                    }
-                  </code>
-                </ul>
-                <ul>
-                  <li>If Else</li>
-                  <code>
-                    if true {<br />
-                    println("Hello World");<br />
-                    } else if false {<br />
-                    println("Hello World");<br />
-                    } else {<br />
-                    println("Hello World");<br />
-                    }
-                  </code>
-                </ul>
-                <ul>
-                  <li>Functions</li>
-                  <code>
-                    pub fn function_name(parameter_name: parameter_type :
-                    return_type {<br />
-                    ret 123;<br />
-                    }
-                  </code>
-                </ul>
-              </details>
-              <details>
-                <summary><span>Types</span></summary>
-                <br />
-                <ul>
-                  <li>Boolean</li>
-                  <code> v positive: bool = true; </code>
-                </ul>
-                <ul>
-                  <li>Integer</li>
-                  <code> v age: int = 123; </code>
-                </ul>
-                <ul>
-                  <li>Float</li>
-                  <code> v pi: float = 3.14; </code>
-                </ul>
-                <ul>
-                  <li>Double</li>
-                  <code> v pi: double = 3.14; </code>
-                </ul>
-                <ul>
-                  <li>String</li>
-                  <code> v name: string = "Ellie"; </code>
-                </ul>
-                <ul>
-                  <li>Char</li>
-                  <code> v first_char: char = 'E'; </code>
-                </ul>
-              </details>
-              <details>
-                <summary><span>Examples</span></summary>
-                <br />
-                <ul id="examples">
-                </ul>
-              </details>
-              <br />
-              <div
-                class="run-panel d-flex"
-                style="margin-bottom: 15px; margin-top: 5px"
-              >
-                <button
-                  id="run_btn"
-                  type="button"
-                  style="margin-left: auto; margin-right: auto"
-                  class="btn btn-secondary d-flex"
-                >
-                  <span class="material-icons"> play_arrow </span>
-                  <span>Run</span>
-                </button>
-                <button
-                  id="clr_btn"
-                  type="button"
-                  style="margin-left: auto; margin-right: auto"
-                  class="btn btn-danger d-flex"
-                >
-                  <span class="material-icons"> delete </span>
-                  <span>Clear console</span>
-                </button>
+              <h3 class="text-center">Ellie Playground</h3>
+              <br>
+              <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <button class="nav-link active" id="nav-about-tab" data-bs-toggle="tab" data-bs-target="#nav-about" type="button" role="tab" aria-controls="nav-about" aria-selected="true" style="color : #884a6f">
+                    About
+                  </button>
+                  <button class="nav-link" id="nav-language-items-tab" data-bs-toggle="tab" data-bs-target="#nav-language-items" type="button" role="tab" aria-controls="nav-language-items" aria-selected="false" style="color : #884a6f">
+                    Language Items
+                  </button>
+                  <button class="nav-link" id="nav-types-tab" data-bs-toggle="tab" data-bs-target="#nav-types" type="button" role="tab" aria-controls="nav-types" aria-selected="false" style="color : #884a6f">
+                    Types
+                  </button>
+                  <button class="nav-link" id="nav-examples-tab" data-bs-toggle="tab" data-bs-target="#nav-examples" type="button" role="tab" aria-controls="nav-examples" aria-selected="false" style="color : #884a6f">
+                    Examples
+                  </button>
+                </div>
+              </nav>
+              <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab" tabindex="0">
+                  <p>
+                    This is a playground for Ellie. It is a simple editor that
+                    allows you to write code in Ellie. You can run the code and
+                    see the output.
+                  </p>
+                </div>
+                <div class="tab-pane fade" id="nav-language-items" role="tabpanel" aria-labelledby="nav-language-items-tab" tabindex="0">
+                  <ul>
+                    <li>Variables</li>
+                    <code>
+                      v variable_type = 123;<br />
+                      c constant_variable = 123;
+                    </code>
+                  </ul>
+                  <ul>
+                    <li>Loop</li>
+                    <code>
+                      v continue = true;<br />
+                      loop continue {<br />
+                      println("Hello World");<br />
+                      }
+                    </code>
+                  </ul>
+                  <ul>
+                    <li>If Else</li>
+                    <code>
+                      if true {<br />
+                      println("Hello World");<br />
+                      } else if false {<br />
+                      println("Hello World");<br />
+                      } else {<br />
+                      println("Hello World");<br />
+                      }
+                    </code>
+                  </ul>
+                  <ul>
+                    <li>Functions</li>
+                    <code>
+                      pub fn function_name(parameter_name: parameter_type :
+                      return_type {<br />
+                      ret 123;<br />
+                      }
+                    </code>
+                  </ul>
+                </div>
+                <div class="tab-pane fade" id="nav-types" role="tabpanel" aria-labelledby="nav-types-tab" tabindex="0">
+                  <ul>
+                    <li>Boolean</li>
+                    <code> v positive: bool = true; </code>
+                  </ul>
+                  <ul>
+                    <li>Integer</li>
+                    <code> v age: int = 123; </code>
+                  </ul>
+                  <ul>
+                    <li>Float</li>
+                    <code> v pi: float = 3.14; </code>
+                  </ul>
+                  <ul>
+                    <li>Double</li>
+                    <code> v pi: double = 3.14; </code>
+                  </ul>
+                  <ul>
+                    <li>String</li>
+                    <code> v name: string = "Ellie"; </code>
+                  </ul>
+                  <ul>
+                    <li>Char</li>
+                    <code> v first_char: char = 'E'; </code>
+                  </ul>
+                </div>
+                <div class="tab-pane fade" id="nav-examples" role="tabpanel" aria-labelledby="nav-examples-tab" tabindex="0">
+                  <ul id="examples">
+                  </ul>
+                </div>
               </div>
-              <pre style="border: 1px solid grey" id="container_right_up"></pre>
+              <div class="run-panel d-flex"></div>
+            </div>
+          </div>
+          <div class="run-buttons">
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button disabled id="run_btn" type="button" class="btn btn-primary btn-sm">
+                Run
+              </button>
+              <button id="clr_btn" type="button" class="btn btn-danger btn-sm">
+                Clear console
+              </button>
+              <input type="checkbox" class="btn-check btn-sm vhidden" id="autoScrollLogs" autocomplete="off" />
+              <label class="btn btn-outline-primary btn-sm" for="autoScrollLogs">Auto Scroll</label>
             </div>
           </div>
           <div class="bottom_panel">
-            <div id="container_right_bottom">
+            <div id="inputReadline" class="ellie-console-input-container">
+              <input class="ellie-console-input" type="text" id="console_input" placeholder="Enter input" />
+              <span>|</span>
             </div>
           </div>
         </div>
