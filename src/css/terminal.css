@@ -1,54 +1,74 @@
+/* ==========================================================================
+   Output console + ANSI colours + themed scrollbars.
+   ========================================================================== */
+
+.bottom_panel {
+  padding: 0.75rem 1rem 1rem;
+  background: var(--surface-console);
+  width: 100%;
+  /* Docked console: solid default height, resizable via .console-resizer */
+  flex: 0 0 40%;
+  min-height: 140px;
+  overflow: auto;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.bottom_panel p {
+  margin: 0;
+  padding: 1px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  letter-spacing: 0;
+}
+
 .termWhite {
-    color: #fff !important;
-    overflow: auto;
+  color: var(--term-white) !important;
 }
-
 .termRed {
-    color: #ff0000 !important;
-    overflow: auto;
+  color: var(--term-red) !important;
 }
-
 .termGreen {
-    color: #00ff00 !important;
-    overflow: auto;
+  color: var(--term-green) !important;
 }
-
 .termYellow {
-    color: #ffff00 !important;
-    overflow: auto;
+  color: var(--term-yellow) !important;
 }
-
 .termCyan {
-    color: #00ffff !important;
-    overflow: auto;
+  color: var(--term-cyan) !important;
 }
-
 .termBlue {
-    color: #0000ff !important;
-    overflow: auto;
+  color: var(--term-blue) !important;
 }
-
 .termMagenta {
-    color: #ff00ff !important;
-    overflow: auto;
+  color: var(--term-magenta) !important;
 }
 
-/* width */
+/* ---- Scrollbars ----------------------------------------------------------- */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--brand-strong) transparent;
+}
+
 ::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f5eaef; 
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #884a6f; 
+  width: 10px;
+  height: 10px;
 }
 
-/* Handle on hover */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--brand-strong);
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #884a6f; 
+  background: var(--brand);
+  background-clip: content-box;
 }

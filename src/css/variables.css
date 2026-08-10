@@ -1,0 +1,47 @@
+/* ==========================================================================
+   Design tokens — single source of truth for the Ellie Playground theme.
+   ========================================================================== */
+
+:root {
+  /* Brand (mauve) */
+  --brand: #a85e8a;
+  --brand-strong: #884a6f;
+  --brand-deep: #5f334e;
+  --brand-darkest: #462b45;
+  --brand-pale: #f5eaef;
+
+  /* Surfaces (dark) */
+  --surface-editor: #1e1e1e;
+  --surface-panel: #1b1b1d;
+  --surface-raised: #26232a;
+  --surface-console: #131215;
+
+  /* Text */
+  --text: #ece6ea;
+  --text-muted: #b7a9b2;
+  --text-faint: #7d7280;
+
+  /* Lines & focus */
+  --border: rgba(245, 234, 239, 0.10);
+  --border-strong: rgba(245, 234, 239, 0.18);
+  --focus-ring: rgba(168, 94, 138, 0.45);
+
+  /* Terminal / ANSI — tuned for contrast on a dark console */
+  --term-white: #e9e3e7;
+  --term-red: #ff6b6b;
+  --term-green: #7ee787;
+  --term-yellow: #ffd166;
+  --term-cyan: #56cfe1;
+  --term-blue: #6ea8fe;
+  --term-magenta: #e59be9;
+
+  /* Shape & motion */
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 14px;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  /* Chrome height */
+  --nav-height: 52px;
+}

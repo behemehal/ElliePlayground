@@ -65,7 +65,7 @@
       <nav class="navbar navbar-expand-md fixed-top bg-theme navbar-theme dark-section p-0">
         <div class="container-fluid mt-3">
           <a class="navbar-brand" href="/">
-            <span>Ellie<span style="color: #884a6f">Playground</span></span>
+            <span>Ellie<span>Playground</span></span>
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -90,18 +90,11 @@
         </div>
       </nav>
     </header>
-    <main class="dark-section section" style="
-        width: 100%;
-        height: calc(100vh - 40px);
-        padding-top: 15px !important;
-        padding-bottom: 0 !important;
-        padding-right: 0 !important;
-        padding-left: 0px !important;
-      ">
+    <main class="dark-section main-editor">
       <div class="panel">
         <div class="left_panel">
           <div id="container_left">
-            <p class="loading">Loading Editor...</p>
+            <p class="loading">Loading editor…</p>
           </div>
         </div>
 
@@ -112,21 +105,19 @@
         <div class="right_panel">
           <div class="upper_panel">
             <div class="pt-3">
-              <br />
-              <h3 class="text-center">Ellie Playground</h3>
-              <br>
+              <h3 class="text-center py-3">Ellie Playground</h3>
               <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                  <button class="nav-link active" id="nav-about-tab" data-bs-toggle="tab" data-bs-target="#nav-about" type="button" role="tab" aria-controls="nav-about" aria-selected="true" style="color : #884a6f">
+                  <button class="nav-link active" id="nav-about-tab" data-bs-toggle="tab" data-bs-target="#nav-about" type="button" role="tab" aria-controls="nav-about" aria-selected="true">
                     About
                   </button>
-                  <button class="nav-link" id="nav-language-items-tab" data-bs-toggle="tab" data-bs-target="#nav-language-items" type="button" role="tab" aria-controls="nav-language-items" aria-selected="false" style="color : #884a6f">
+                  <button class="nav-link" id="nav-language-items-tab" data-bs-toggle="tab" data-bs-target="#nav-language-items" type="button" role="tab" aria-controls="nav-language-items" aria-selected="false">
                     Language Items
                   </button>
-                  <button class="nav-link" id="nav-types-tab" data-bs-toggle="tab" data-bs-target="#nav-types" type="button" role="tab" aria-controls="nav-types" aria-selected="false" style="color : #884a6f">
+                  <button class="nav-link" id="nav-types-tab" data-bs-toggle="tab" data-bs-target="#nav-types" type="button" role="tab" aria-controls="nav-types" aria-selected="false">
                     Types
                   </button>
-                  <button class="nav-link" id="nav-examples-tab" data-bs-toggle="tab" data-bs-target="#nav-examples" type="button" role="tab" aria-controls="nav-examples" aria-selected="false" style="color : #884a6f">
+                  <button class="nav-link" id="nav-examples-tab" data-bs-toggle="tab" data-bs-target="#nav-examples" type="button" role="tab" aria-controls="nav-examples" aria-selected="false">
                     Examples
                   </button>
                 </div>
@@ -213,21 +204,24 @@
             </div>
           </div>
           <div class="run-buttons">
-            <div class="btn-group" role="group" aria-label="Basic example">
-              <button disabled id="run_btn" type="button" class="btn btn-primary btn-sm">
-                Run
-              </button>
-              <button id="clr_btn" type="button" class="btn btn-danger btn-sm">
-                Clear console
-              </button>
-              <input type="checkbox" class="btn-check btn-sm vhidden" id="autoScrollLogs" autocomplete="off" />
-              <label class="btn btn-outline-primary btn-sm" for="autoScrollLogs">Auto Scroll</label>
-            </div>
+            <button disabled id="run_btn" type="button" class="ep-btn ep-btn--run">
+              <span class="material-icons" aria-hidden="true">play_arrow</span>
+              Run
+            </button>
+            <button id="clr_btn" type="button" class="ep-btn ep-btn--ghost" title="Clear console">
+              <span class="material-icons" aria-hidden="true">clear_all</span>
+              Clear
+            </button>
+            <label class="ep-toggle" for="autoScrollLogs" title="Auto-scroll the console as new output arrives">
+              <input type="checkbox" class="ep-toggle__input" id="autoScrollLogs" autocomplete="off" />
+              <span class="ep-toggle__track" aria-hidden="true"><span class="ep-toggle__thumb"></span></span>
+              <span class="ep-toggle__text">Auto-scroll</span>
+            </label>
           </div>
+          <div class="console-resizer" role="separator" aria-orientation="horizontal" title="Drag to resize the console"></div>
           <div class="bottom_panel">
-            <div id="inputReadline" class="ellie-console-input-container">
-              <input class="ellie-console-input" type="text" id="console_input" placeholder="Enter input" />
-              <span>|</span>
+            <div id="inputReadline" class="ellie-console-input-container is-disabled">
+              <input class="ellie-console-input" type="text" id="console_input" placeholder="stdin isn't supported yet" disabled aria-disabled="true" />
             </div>
           </div>
         </div>
